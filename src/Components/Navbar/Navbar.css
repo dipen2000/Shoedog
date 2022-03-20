@@ -1,0 +1,16 @@
+.navbar{
+    border : 3px solid black;
+    padding : 1rem;
+}
+
+.mid-nav-links-container{
+    gap : 1.5rem;
+}
+
+.right-nav-links-container{
+    gap : 1.5rem;
+}
+
+.nav-link{
+    cursor : pointer;
+}
