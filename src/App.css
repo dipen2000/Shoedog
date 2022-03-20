@@ -1,25 +1,33 @@
-.flex-row{
-  display : flex;
-    flex-direction: row;
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
 
-.flex-col{
+.flex-col {
   display: flex;
   flex-direction: column;
 }
 
-.justify-center-flex{
-  justify-content : center;
+.justify-center-flex {
+  justify-content: center;
 }
 
-.justify-space-between-flex{
-  justify-content : space-between;
+.justify-space-between-flex {
+  justify-content: space-between;
 }
 
-.align-center-flex{ 
-  align-items : center;
+.align-center-flex {
+  align-items: center;
 }
 
-.curs-point{
-  cursor : pointer;
+.curs-point {
+  cursor: pointer;
 }
+
+.margin-sides-auto {
+  margin: 0 auto;
+}
+
+/* the below code is temporary */
+/* all the other code of utility functions write above */
+/* temporary code for img-carousel */
