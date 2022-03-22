@@ -1,7 +1,6 @@
 import "./productListing.css";
 import { useProduct } from "../../custom-hooks/useProduct";
 import { ACTIONS } from "../../Constants/actions";
-import { sortDataByPrice } from "../../utils/sortByPrice";
 import { getFinalData } from "../../utils/getFinalData";
 
 const ProductListing = () => {
