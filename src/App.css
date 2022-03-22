@@ -31,3 +31,10 @@
 /* the below code is temporary */
 /* all the other code of utility functions write above */
 /* temporary code for img-carousel */
+
+.grid-container {
+  border: 3px solid yellow;
+  display: grid;
+  grid-template-columns: 25rem minmax(0, 1fr);
+  grid-template-rows: 1fr;
+}
