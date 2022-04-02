@@ -74,7 +74,7 @@ const ProductListing = () => {
           ) : (
             finalData.map((product) => {
               return (
-                <div className="grid-item">
+                <div key={product._id} className="grid-item">
                   <p>{product.name}</p>
                   <p>{product.brand}</p>
                   <p>{product.gender}</p>
@@ -94,6 +94,7 @@ const ProductListing = () => {
                   </p>
                   <p>{product.brandLogo}</p>
                   <p>{product.badge}</p>
+                  <button>add to wishlist</button>
                 </div>
               );
             })

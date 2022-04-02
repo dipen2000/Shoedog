@@ -1,7 +1,9 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 
 const Navbar = () => {
+  const { isAuth } = useAuth();
   return (
     <header>
       <nav className="navbar flex-row justify-space-between-flex align-center-flex">
@@ -32,7 +34,11 @@ const Navbar = () => {
             </Link>
           </div>
           <button className="curs-point">Hindi</button>
-          <button className="curs-point">Login</button>
+          <button className="curs-point">
+            <Link to={`/${isAuth ? "logout" : "login"}`}>
+              {isAuth ? "Logout" : "Login"}
+            </Link>
+          </button>
         </div>
       </nav>
     </header>
