@@ -1,9 +1,11 @@
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
+import { useWishlist } from "../../context/wishlist-context";
 
 const Navbar = () => {
   const { isAuth } = useAuth();
+  const { wishlistState } = useWishlist();
   return (
     <header>
       <nav className="navbar flex-row justify-space-between-flex align-center-flex">
@@ -25,7 +27,7 @@ const Navbar = () => {
           </label>
           <div>
             <Link to="/wishlist" className="curs-point">
-              Wishlist
+              Wishlist {wishlistState.length}
             </Link>
           </div>
           <div>

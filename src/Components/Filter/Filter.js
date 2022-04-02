@@ -23,7 +23,7 @@ const Filter = () => {
       <h2>Filters</h2>
       <p
         className="curs-point"
-        style={{ "text-decoration": "underline" }}
+        style={{ textDecoration: "underline" }}
         onClick={() =>
           productDispatch({ type: CLEAR_FILTER, payload: { data: products } })
         }

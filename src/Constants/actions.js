@@ -11,6 +11,7 @@ const ACTIONS = {
   PRICE_RANGE_SLIDER: "price-range-slider",
   CLEAR_FILTER: "clear-filter",
   FILTER_BY_BRAND: "filter-by-brand",
+  SET_WISHLIST_DATA: "set-wishlist-data",
 };
 
 export { ACTIONS };

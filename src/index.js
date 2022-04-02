@@ -6,6 +6,7 @@ import { makeServer } from "./server";
 import { ProductProvider } from "./context/product-context";
 import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from "./context/auth-context";
+import { WishlistProvider } from "./context/wishlist-context";
 
 // Call make Server
 makeServer();
@@ -15,7 +16,9 @@ ReactDOM.render(
     <Router>
       <AuthProvider>
         <ProductProvider>
-          <App />
+          <WishlistProvider>
+            <App />
+          </WishlistProvider>
         </ProductProvider>
       </AuthProvider>
     </Router>
