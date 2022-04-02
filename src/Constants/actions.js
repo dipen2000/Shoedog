@@ -12,6 +12,7 @@ const ACTIONS = {
   CLEAR_FILTER: "clear-filter",
   FILTER_BY_BRAND: "filter-by-brand",
   SET_WISHLIST_DATA: "set-wishlist-data",
+  SET_CART_DATA: "set-cart-data",
 };
 
 export { ACTIONS };

@@ -2,10 +2,12 @@ import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import { useWishlist } from "../../context/wishlist-context";
+import { useCart } from "../../context/cart-context";
 
 const Navbar = () => {
   const { isAuth } = useAuth();
   const { wishlistState } = useWishlist();
+  const { cartState } = useCart();
   return (
     <header>
       <nav className="navbar flex-row justify-space-between-flex align-center-flex">
@@ -21,10 +23,10 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="right-nav-links-container flex-row align-center-flex justify-center-flex">
-          <label htmlFor="dark-mode">
+          {/* <label htmlFor="dark-mode">
             <input className="curs-point" type="checkbox" name="dark-mode" />
             switch to dark mode
-          </label>
+          </label> */}
           <div>
             <Link to="/wishlist" className="curs-point">
               Wishlist {wishlistState.length}
@@ -32,10 +34,10 @@ const Navbar = () => {
           </div>
           <div>
             <Link to="/cart" className="curs-point">
-              Add to cart
+              Add to cart {cartState.length}
             </Link>
           </div>
-          <button className="curs-point">Hindi</button>
+          {/* <button className="curs-point">Hindi</button> */}
           <button className="curs-point">
             <Link to={`/${isAuth ? "logout" : "login"}`}>
               {isAuth ? "Logout" : "Login"}

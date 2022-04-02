@@ -1,10 +1,13 @@
 import { useWishlist } from "../../context/wishlist-context";
+import { useCart } from "../../context/cart-context";
 import { useAuth } from "../../context/auth-context";
 const ProductCard = ({ product }) => {
   const { wishlistState, toggleWishlist } = useWishlist();
+  const { cartState, addToCartHandler } = useCart();
   const { isAuth, navigate } = useAuth();
 
   const itemInWishlist = wishlistState.find((item) => item._id === product._id);
+  const itemInCart = cartState.find((item) => item._id === product._id);
 
   return (
     <div className="grid-item">
@@ -31,6 +34,14 @@ const ProductCard = ({ product }) => {
         }}
       >
         {isAuth && itemInWishlist ? "Remove from wishlist" : "Add to wishlist"}
+      </button>
+      <br />
+      <button
+        onClick={() =>
+          isAuth && itemInCart ? navigate("/cart") : addToCartHandler(product)
+        }
+      >
+        {isAuth && itemInCart ? "Go To Cart" : "Add To Cart"}
       </button>
     </div>
   );
