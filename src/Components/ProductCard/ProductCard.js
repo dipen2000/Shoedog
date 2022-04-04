@@ -16,8 +16,8 @@ const ProductCard = ({ product }) => {
       <p>{product.gender}</p>
       <p>
         sizes :{" "}
-        {product.sizes.map((size) => {
-          return <span>{size}</span>;
+        {product.sizes.map((size, index) => {
+          return <span key={index}>{size}</span>;
         })}
       </p>
       <p>{product.inStock ? "in stock" : "out of stock"}</p>

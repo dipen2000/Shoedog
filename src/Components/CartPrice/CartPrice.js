@@ -7,7 +7,7 @@ import {
   getTotalSaving,
 } from "../../utils/cartPriceCalc";
 const CartPrice = () => {
-  const [payment, setPayment] = useState(false);
+  const [placeOrder, setPlaceOrder] = useState(false);
   const { cartState } = useCart();
 
   const cartPriceDetails = {
@@ -25,15 +25,10 @@ const CartPrice = () => {
       <div>Delivery charge : &#8377;50</div>
       <div>Total amount : &#8377;{totalPrice}</div>
       <div>You will save &#8377;{totalSaving} on this order</div>
-      <button onClick={() => setPayment((prevState) => !prevState)}>
-        Buy now
+      <button onClick={() => setPlaceOrder((prevState) => !prevState)}>
+        Place order
       </button>
-      {payment && (
-        <div>
-          Believe that the payment is done although i will add the test payment
-          later.
-        </div>
-      )}
+      {placeOrder && <div>Believe that the order is placed.</div>}
     </>
   );
 };
