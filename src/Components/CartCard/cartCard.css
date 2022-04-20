@@ -1,0 +1,45 @@
+.individual-cart-card-container {
+  display : grid;
+  grid-template-columns: 4fr 7fr;
+  grid-template-rows: 1fr;
+  gap : 2rem;
+  font-family: var(--component-heading-font);
+}
+
+.cart-card-img-container{
+  width : 100%;
+  height: 30rem;
+}
+
+
+
+.cart-card-detail-section{
+  padding : 1.5rem;
+}
+
+.quantity-counter-container{
+  gap : 1rem;
+}
+
+.quantity-counter{
+  border : 3px solid var(--shoe-dog-black);
+  gap : 0.8rem;
+}
+
+.incr-decr-span:hover{
+  background-color : rgba(0, 0, 0, 0.23);
+}
+
+.quantity-counter span{
+  padding : 0.8rem;
+}
+
+.cart-card-detail-container{
+  gap : 0.5rem;
+}
+
+
+.cart-card-flex-container{
+  height : 100%;
+  gap : 1rem;
+}

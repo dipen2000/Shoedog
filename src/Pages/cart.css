@@ -1,0 +1,17 @@
+.cart-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+.cart-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 3fr 2fr;
+}
+
+.cart-products-container {
+  gap : 1.4rem;  
+}
+
+

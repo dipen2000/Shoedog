@@ -1,0 +1,25 @@
+.filter {
+  font-family: var(--component-heading-font);
+  padding : 0.8rem;
+}
+
+.filter-type-item{
+  border-bottom: 1px solid var(--shoe-dog-black);
+  margin : 1rem 0;
+  padding : 0.8rem;
+}
+
+
+.sizes-filter{
+  gap : 1rem;
+}
+
+.filter-type-tilte{
+  padding : 0.8rem 0;
+  border-bottom: 1px solid var(--shoe-dog-black);
+}
+
+.filter-type-option{
+  margin : 0.5rem 0;
+}
+

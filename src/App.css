@@ -1,3 +1,9 @@
+:root{
+  --white-background : #FDEFF4;
+  --shoe-dog-black : rgba(0, 0, 0, 0.918);
+  --shoe-dog-black-hover : rgba(0, 0, 0, 0.878);
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -20,6 +26,10 @@
   align-items: center;
 }
 
+.justify-space-evenly-flex{
+  justify-content : space-evenly;
+}
+
 .curs-point {
   cursor: pointer;
 }
@@ -28,6 +38,45 @@
   margin: 0 auto;
 }
 
-/* the below code is temporary */
-/* all the other code of utility functions write above */
-/* temporary code for img-carousel */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 25rem minmax(0, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.mb-1{
+  margin-bottom: 1rem;
+}
+
+.pd-1{
+  padding : 1rem;
+}
+
+.gap-1{
+  gap : 1rem;
+}
+
+.img-resp {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.empty-list-msg{
+  margin-top :  10rem;
+}
+
+.link-ele{
+  text-decoration: underline;
+}
+
+.card-box-shadow {
+  box-shadow: 0 3px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-box-shadow:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}

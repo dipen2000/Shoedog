@@ -1,0 +1,27 @@
+.shoetube-btn-main{
+    background-color : var(--shoe-dog-black);
+    border-radius: 0;
+  }
+  
+.shoetube-btn-main-cart{
+  font-size : 1.4rem;
+  padding : 0.7rem;
+}
+
+.shoetube-btn-main:hover{
+  background-color : var(--shoe-dog-black-hover);
+}
+
+
+.shoetube-btn-main-outline{
+  border-radius: 0;
+  border : 2px solid var(--shoe-dog-black);
+  color : var(--shoe-dog-black);
+  font-size : 1.4rem;
+  padding : 0.7rem;
+}
+
+.shoetube-btn-main-outline:hover{
+  background-color : var(--shoe-dog-black);
+  color : var(--white-background);
+}
