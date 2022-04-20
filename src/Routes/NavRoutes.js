@@ -6,6 +6,7 @@ import { Wishlist } from "../Pages/Wishlist";
 import { Login } from "../Pages/Login";
 import { LogOut } from "../Pages/LogOut";
 import { SignUp } from "../Pages/SignUp";
+import { Page404 } from "../Pages/Page404";
 import Mockman from "mockman-js";
 
 const NavRoutes = () => {
@@ -19,6 +20,7 @@ const NavRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<LogOut />} />
       <Route path="/signup" element={<SignUp />} />
+      <Route path="*" element={<Page404 />} />
     </Routes>
   );
 };

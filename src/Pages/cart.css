@@ -1,20 +1,20 @@
 .cart-wrapper {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   max-width: 80%;
   margin: 0 auto;
+  margin-bottom: 3rem;
 }
 
 .cart-grid {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   display: grid;
   gap: 1rem;
   grid-template-columns: 3fr 2fr;
 }
 
 .cart-products-container {
-  border: 3px solid yellow;
+  /* border: 3px solid yellow; */
+  gap : 1.4rem;  
 }
 
-.cart-price-container {
-  border: 3px solid purple;
-}
+

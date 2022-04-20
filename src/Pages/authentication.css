@@ -1,4 +1,49 @@
-.form-container {
-  border: 3px solid black;
+.form-size {
+  /* border: 3px solid black; */
   margin: 0 auto;
+  width : 80%;
 }
+
+.form-container{
+  gap : 0.8rem;
+}
+
+.logout-page{
+  width : 100%;
+  /* border : 3px solid red; */
+  height : 100vh;
+}
+
+.logout-page i {
+  font-size : 5rem;
+}
+
+.login-container{
+  /* border : 3px solid red; */
+  margin-top : 10rem;
+  font-family: var(--component-heading-font);
+}
+
+.input-field{
+  width : 40rem;
+  padding : 0.5rem;
+  border : 3px solid var(--shoe-dog-black);
+}
+
+.auth-btn{
+  width : 50%;
+  margin : auto;
+}
+
+.login-page-btn-container{
+  gap : 1rem;
+}
+
+.signup-container{
+  /* border :  3px solid green; */
+  width : 80%;
+  margin : auto;
+  margin-top : 10rem;
+  font-family: var(--component-heading-font);
+}
+

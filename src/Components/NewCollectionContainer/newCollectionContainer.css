@@ -1,5 +1,9 @@
 .new-collection-container {
-  border: 3px solid green;
+  /* border: 3px solid green; */
   width: 100%;
   padding: 2rem;
+}
+
+.home-product-card-width{
+  width : 24rem;
 }

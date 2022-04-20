@@ -1,11 +1,18 @@
 .productListing {
-  border: 3px solid green;
+  /* border: 3px solid green; */
+  border-left : 2px solid var(--shoe-dog-black);
   width: 100%;
+  font-family: var(--component-heading-font);
 }
 
 .brand-filter-container {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   gap: 1rem;
+  padding : 0.8rem;
+}
+
+.product-page-title{
+  margin-left : 1rem;
 }
 
 .products-grid {
@@ -22,10 +29,47 @@
 }
 
 .grid-item {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   /* width: 30rem; */
+  position : relative;
   height: 40rem;
 }
+
+.shoedog-chip-btn{
+  color : var(--shoe-dog-black);
+  border : 4px solid var(--shoe-dog-black);
+  padding : 0.8rem;
+  border-radius: 0;
+}
+
+.shoedog-chip-btn:hover{
+  background-color : var(--shoe-dog-black);
+  color : var(--white-background);
+}
+
+.out-of-stock-container{
+  position: absolute;
+  top : 0;
+  left : 0;
+  width : 100%;
+  height : 100%;
+  /* border : 3px solid red; */
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  
+}
+
+.out-of-stock-text{
+  padding : 1rem;
+  background-color: var(--shoe-dog-black);
+  color : var(--white-background);
+}
+
+.pointer-event-none{
+  pointer-events : none;
+}
+
+
 
 /* @media only screen and (max-width: 832px) {
   .products-grid {

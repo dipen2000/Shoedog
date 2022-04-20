@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 .navbar{
-    border : 3px solid black;
+    border : 5px solid var(--shoe-dog-black);
     padding : 1rem;
+    font-family : var(--component-heading-font);
+    background-color : var(--white-background);
+}
+
+.navbar-title{
+    font-family: 'Oswald', sans-serif;
 }
 
 .mid-nav-links-container{
@@ -14,3 +21,11 @@
 .nav-link{
     cursor : pointer;
 }
+
+.nav-position-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    /* background-color : red; */
+}
+

@@ -31,7 +31,7 @@ const Login = () => {
       setLoginInput({ ...loginInput, input: { email: "", password: "" } });
       setIsAuth(true);
 
-      navigate(-1);
+      navigate("/");
     } catch (err) {
       setLoginInput({
         ...loginInput,
@@ -42,56 +42,69 @@ const Login = () => {
   return (
     <>
       <Navbar />
-      <h1>Login</h1>
-      <div className="form-container">
-        <form onSubmit={loginHandler}>
-          <div>{loginInput.error}</div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Enter your email here"
-            onChange={loginInputHandler}
-            value={loginInput.input.email}
-            required
-          />
-          <br />
-          <input
-            type={loginInput.hide.pwd ? "password" : "text"}
-            name="password"
-            placeholder="Enter your password here"
-            onChange={loginInputHandler}
-            value={loginInput.input.password}
-            required
-          />
-          <span
-            onClick={() =>
-              setLoginInput({
-                ...loginInput,
-                hide: { pwd: !loginInput.hide.pwd },
-              })
-            }
-          >
-            {loginInput.hide.pwd ? "Show" : "Hide"}
-          </span>
-          <br />
-          <button>Log in</button>
-          <br />
-          <button
-            type="submit"
-            onClick={() =>
-              setLoginInput({
-                ...loginInput,
-                input: {
-                  email: "adarshbalika@gmail.com",
-                  password: "adarshbalika",
-                },
-              })
-            }
-          >
-            Guest login
-          </button>
-          New to SHOEDOG? <Link to="/signup">Sign up here.</Link>
-        </form>
+      <div className="login-container flex-col justify-center-flex align-center-flex">
+        <h1>Login</h1>
+        <div className="form-size flex-col justify-center-flex align-center-flex">
+          <form onSubmit={loginHandler} className="flex-col form-container">
+            <div>{loginInput.error}</div>
+            <input
+              className="input-field"
+              type="email"
+              name="email"
+              placeholder="Enter your email here"
+              onChange={loginInputHandler}
+              value={loginInput.input.email}
+              required
+            />
+            <div className="flex-row">
+              <input
+                className="input-field"
+                type={loginInput.hide.pwd ? "password" : "text"}
+                name="password"
+                placeholder="Enter your password here"
+                onChange={loginInputHandler}
+                value={loginInput.input.password}
+                required
+              />
+              <span
+                className="curs-point"
+                onClick={() =>
+                  setLoginInput({
+                    ...loginInput,
+                    hide: { pwd: !loginInput.hide.pwd },
+                  })
+                }
+              >
+                {loginInput.hide.pwd ? "Show" : "Hide"}
+              </span>
+            </div>
+            <div className="flex-col login-page-btn-container justify-center-flex align-center-flex">
+              <button className="curs-point btn btn-primary-solid shoetube-btn-main auth-btn">
+                Log in
+              </button>
+              <h3 className="heading-3">or</h3>
+              <button
+                className="curs-point btn btn-primary-solid shoetube-btn-main auth-btn"
+                type="submit"
+                onClick={() =>
+                  setLoginInput({
+                    ...loginInput,
+                    input: {
+                      email: "adarshbalika@gmail.com",
+                      password: "adarshbalika",
+                    },
+                  })
+                }
+              >
+                Guest login
+              </button>
+            </div>
+            New to SHOEDOG?{" "}
+            <Link className="link-ele" to="/signup">
+              Sign up here.
+            </Link>
+          </form>
+        </div>
       </div>
     </>
   );

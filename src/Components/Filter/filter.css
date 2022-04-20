@@ -1,7 +1,29 @@
 .filter {
-  border: 3px solid blue;
+  /* border: 3px solid blue; */
+  font-family: var(--component-heading-font);
+  padding : 0.8rem;
 }
 
+.filter-type-item{
+  /* border : 3px solid red; */
+  border-bottom: 1px solid var(--shoe-dog-black);
+  margin : 1rem 0;
+  padding : 0.8rem;
+}
+
+
+.sizes-filter{
+  gap : 1rem;
+}
+
+.filter-type-tilte{
+  padding : 0.8rem 0;
+  border-bottom: 1px solid var(--shoe-dog-black);
+}
+
+.filter-type-option{
+  margin : 0.5rem 0;
+}
 /* @media only screen and (max-width: 832px) {
   .filter {
     display: none;

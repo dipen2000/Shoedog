@@ -14,7 +14,6 @@ const Product = () => {
           <ProductListing />
         </div>
       </Container>
-      <Footer />
     </>
   );
 };

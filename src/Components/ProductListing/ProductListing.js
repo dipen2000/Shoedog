@@ -13,6 +13,7 @@ const ProductListing = () => {
     <div className="productListing">
       <div className="brand-filter-container flex-row">
         <button
+          className="btn btn-primary-outline shoedog-chip-btn"
           onClick={() =>
             productDispatch({
               type: ACTIONS.FILTER_BY_BRAND,
@@ -23,6 +24,7 @@ const ProductListing = () => {
           All brands
         </button>
         <button
+          className="btn btn-primary-outline  shoedog-chip-btn"
           onClick={() =>
             productDispatch({
               type: ACTIONS.FILTER_BY_BRAND,
@@ -33,6 +35,7 @@ const ProductListing = () => {
           Nike
         </button>
         <button
+          className="btn btn-primary-outline shoedog-chip-btn"
           onClick={() =>
             productDispatch({
               type: ACTIONS.FILTER_BY_BRAND,
@@ -43,6 +46,7 @@ const ProductListing = () => {
           Reebok
         </button>
         <button
+          className="btn btn-primary-outline shoedog-chip-btn"
           onClick={() =>
             productDispatch({
               type: ACTIONS.FILTER_BY_BRAND,
@@ -53,6 +57,7 @@ const ProductListing = () => {
           Adidas
         </button>
         <button
+          className="btn btn-primary-outline shoedog-chip-btn"
           onClick={() =>
             productDispatch({
               type: ACTIONS.FILTER_BY_BRAND,
@@ -63,9 +68,11 @@ const ProductListing = () => {
           Puma
         </button>
       </div>
-      <hr />
-      <h3>Random text here...</h3>
-      <hr />
+
+      <h3 className="heading-3 product-page-title">
+        Products ({finalData.length})
+      </h3>
+
       {products.length === 0 ? (
         <div>Loading...</div>
       ) : (
