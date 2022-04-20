@@ -1,5 +1,4 @@
 .form-size {
-  /* border: 3px solid black; */
   margin: 0 auto;
   width : 80%;
 }
@@ -10,7 +9,6 @@
 
 .logout-page{
   width : 100%;
-  /* border : 3px solid red; */
   height : 100vh;
 }
 
@@ -19,7 +17,6 @@
 }
 
 .login-container{
-  /* border : 3px solid red; */
   margin-top : 10rem;
   font-family: var(--component-heading-font);
 }
@@ -40,7 +37,6 @@
 }
 
 .signup-container{
-  /* border :  3px solid green; */
   width : 80%;
   margin : auto;
   margin-top : 10rem;
