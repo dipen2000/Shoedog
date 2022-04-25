@@ -1,3 +1,20 @@
 .hero-img-container{
     border : 3px solid purple;
+    position: relative;
+    height : 50rem;
+}
+
+.hero-CTA-section{
+    border : 3px solid red;
+    position : absolute;
+    top : 40%;
+    left : 2rem;
+}
+
+.collections-container{
+    border : 3px solid red;
+}
+
+.top-picks-container{
+    border : 3px solid purple;
 }

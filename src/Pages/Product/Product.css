@@ -1,0 +1,6 @@
+.product-page-grid-container{
+    display: grid;
+    grid-template-columns: 26rem minmax(0,1fr);
+    grid-template-rows: 1fr;
+}
+

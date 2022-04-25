@@ -1,0 +1,9 @@
+.filter-container{
+    border : 3px solid blue;
+}
+
+.filter-fixed-container{
+    border : 3px solid green;
+    position: fixed;
+    width : 26rem;
+}
