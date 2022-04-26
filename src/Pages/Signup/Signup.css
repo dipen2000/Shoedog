@@ -1,0 +1,14 @@
+.signup-page-container{
+    border : 3px solid green;
+    margin-top : 10rem;
+}
+
+.signup-section{
+    border : 3px solid blue;
+    width : 50%;
+    padding : 2rem;
+}
+
+.auth-form-title{
+    margin : 0.8rem 0;
+}

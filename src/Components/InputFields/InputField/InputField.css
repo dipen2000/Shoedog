@@ -1,0 +1,8 @@
+.input-field-container{
+    border : 3px solid black;
+    width : 30rem;
+}
+
+.input-field{
+    padding : 0.5rem;
+}
