@@ -1,7 +1,12 @@
 import "./Chip.css";
-const Chip = ({ children }) => {
+
+const Chip = ({ children, onClick, style }) => {
   return (
-    <div className="curs-point chip-container flex-row align-center-flex justify-center-flex">
+    <div
+      style={style}
+      className="curs-point chip-container flex-row align-center-flex justify-center-flex"
+      onClick={onClick}
+    >
       {children}
     </div>
   );

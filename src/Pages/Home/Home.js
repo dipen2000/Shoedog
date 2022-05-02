@@ -3,8 +3,13 @@ import { ShoedogContainer } from "../../Components/Wrapper/ShoedogContainer";
 import { CategoryCard, ProductCard } from "../../Components/Cards";
 import { ButtonPrimary } from "../../Components/Buttons";
 import { useNavigate } from "react-router-dom";
+import { useProduct } from "../../context/productContext";
+import { useCategory } from "../../context/categoryContext";
+
 const Home = () => {
   const navigate = useNavigate();
+  const { productState } = useProduct();
+  const { categoriesState } = useCategory();
   return (
     <>
       <ShoedogContainer>
@@ -26,31 +31,21 @@ const Home = () => {
         <section className="collections-container flex-col">
           <h2 className="mb-1 mt-1">Our collections</h2>
           <div className="flex-row justify-space-evenly-flex">
-            <CategoryCard
-              title={"Nike"}
-              bgImgSrc={"https://i.postimg.cc/JsvPh8Lc/nike-coll.jpg"}
-            />
-            <CategoryCard
-              title={"Adidas"}
-              bgImgSrc={"https://i.postimg.cc/qz7LXqBx/adidas-coll.jpg"}
-            />
-            <CategoryCard
-              title={"Puma"}
-              bgImgSrc={"https://i.postimg.cc/XG0G2Hf0/puma-coll.jpg"}
-            />
-            <CategoryCard
-              title={"Reebok"}
-              bgImgSrc={"https://i.postimg.cc/TyBqTJnk/reebok-coll.jpg"}
-            />
+            {categoriesState.length ? (
+              categoriesState.map((category) => {
+                return <CategoryCard key={category._id} category={category} />;
+              })
+            ) : (
+              <p>Loading...</p>
+            )}
           </div>
         </section>
         <section className="top-picks-container">
           <h2 className="mb-1 mt-1">Our top picks</h2>
           <div className="flex-row justify-space-evenly-flex">
-            {/* <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard /> */}
+            {productState.input.slice(0, 5).map((product) => {
+              return <ProductCard key={product._id} product={product} />;
+            })}
           </div>
         </section>
       </ShoedogContainer>

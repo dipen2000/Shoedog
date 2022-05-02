@@ -4,20 +4,51 @@ import { getFinalData } from "../../Utils";
 import { SearchBar } from "../SearchBar/SearchBar";
 import { ProductCard } from "../Cards";
 import { useProduct } from "../../context/productContext";
+import { useCategory } from "../../context/categoryContext";
+import { useState } from "react";
 const ProductListing = () => {
-  const categoriesArr = ["All", "Nike", "Adidas", "Puma", "Reebok"];
+  const [searchInput, setSearchInput] = useState("");
   const { productState } = useProduct();
-  const finalData = getFinalData(productState);
+  const { categoriesState, selectedCategory, setSelectedCategory } =
+    useCategory();
+  const finalData = getFinalData(productState, searchInput, selectedCategory);
 
   return (
     <div className="flex-col video-listing-container">
       <div className="flex-row categories-section gap-2">
-        {categoriesArr.map((category, index) => {
-          return <Chip key={index}>{category}</Chip>;
+        <Chip
+          style={{
+            backgroundColor: selectedCategory === "All" ? "black" : "",
+            color: selectedCategory === "All" ? "white" : "",
+          }}
+          onClick={() => {
+            setSelectedCategory("All");
+          }}
+        >
+          All
+        </Chip>
+        {categoriesState.map((category) => {
+          return (
+            <Chip
+              style={{
+                backgroundColor:
+                  selectedCategory === category.categoryName ? "black" : "",
+                color:
+                  selectedCategory === category.categoryName ? "white" : "",
+              }}
+              key={category._id}
+              onClick={() => setSelectedCategory(category.categoryName)}
+            >
+              {category.categoryName}
+            </Chip>
+          );
         })}
       </div>
       <div className="flex-row search-section">
-        <SearchBar />
+        <SearchBar
+          onChange={(e) => setSearchInput(e.target.value)}
+          value={searchInput}
+        />
       </div>
       <div className="video-section">
         <h3>Products ({finalData.length})</h3>

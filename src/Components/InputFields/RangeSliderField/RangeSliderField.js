@@ -1,5 +1,5 @@
 import "./RangeSliderField.css";
-const RangeSliderField = ({ name, min, max, step }) => {
+const RangeSliderField = ({ name, min, max, step, onChange }) => {
   return (
     <input
       className="curs-point"
@@ -8,6 +8,7 @@ const RangeSliderField = ({ name, min, max, step }) => {
       min={min}
       max={max}
       step={step}
+      onChange={onChange}
     />
   );
 };

@@ -6,6 +6,10 @@ const ACTIONS = {
   FILTER_BY_MALE_GENDER: "filter by male gender",
   FILTER_BY_FEMALE_GENDER: "filter by female gender",
   FILTER_BY_SIZE: "filter by size",
+  FILTER_BY_STOCK: "filter by stock",
+  FILTER_BY_DELIVERY: "filter by delivery",
+  FILTER_BY_RANGE: "filter by range",
+  CLEAR_FILTER: "clear filter",
 };
 
 export { ACTIONS };

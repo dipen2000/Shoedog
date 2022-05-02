@@ -5,6 +5,9 @@ const initialProducts = {
   sortBy: null,
   gender: ACTIONS.FILTER_BY_ALL_GENDERS,
   sizes: [],
+  inStock: false,
+  hasFastDelivery: false,
+  rangeValue: "0",
 };
 
 const productReducer = (state, action) => {
@@ -29,6 +32,17 @@ const productReducer = (state, action) => {
       return { ...state, gender: ACTIONS.FILTER_BY_FEMALE_GENDER };
     case ACTIONS.FILTER_BY_SIZE:
       return { ...state, sizes: getSizeArr(state.sizes, action.payload.size) };
+    case ACTIONS.FILTER_BY_STOCK:
+      return { ...state, inStock: !state.inStock };
+    case ACTIONS.FILTER_BY_DELIVERY:
+      return { ...state, hasFastDelivery: !state.hasFastDelivery };
+    case ACTIONS.FILTER_BY_RANGE:
+      return { ...state, rangeValue: action.payload.rangeValue };
+    case ACTIONS.CLEAR_FILTER:
+      return {
+        ...initialProducts,
+        input: action.payload.data,
+      };
     default:
       return state;
   }

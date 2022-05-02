@@ -14,12 +14,15 @@ const ProductProvider = ({ children }) => {
   useEffect(
     () =>
       (async () => {
-        const { data } = await axios.get("/api/products");
-        console.log(data.products);
-        productDispatch({
-          type: ACTIONS.DISPLAY_DATA,
-          payload: { data: data.products },
-        });
+        try {
+          const { data } = await axios.get("/api/products");
+          productDispatch({
+            type: ACTIONS.DISPLAY_DATA,
+            payload: { data: data.products },
+          });
+        } catch (e) {
+          console.log(e);
+        }
       })(),
     []
   );

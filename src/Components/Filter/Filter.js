@@ -15,7 +15,17 @@ const Filter = () => {
         <div className="flex-col gap-2">
           <div className="flex-row align-center-flex justify-space-between-flex">
             <h2>Filter</h2>
-            <span className="clear">Clear</span>
+            <span
+              className="clear curs-point"
+              onClick={() =>
+                productDispatch({
+                  type: ACTIONS.CLEAR_FILTER,
+                  payload: { data: productState.input },
+                })
+              }
+            >
+              Clear
+            </span>
           </div>
           <div className="flex-col gap-1">
             <div className="filter-option-container flex-col">
@@ -55,6 +65,9 @@ const Filter = () => {
                   onChange={() =>
                     productDispatch({ type: ACTIONS.FILTER_BY_ALL_GENDERS })
                   }
+                  checked={
+                    productState.gender === ACTIONS.FILTER_BY_ALL_GENDERS
+                  }
                 >
                   All genders
                 </RadioInputField>
@@ -63,6 +76,9 @@ const Filter = () => {
                   onChange={() =>
                     productDispatch({ type: ACTIONS.FILTER_BY_MALE_GENDER })
                   }
+                  checked={
+                    productState.gender === ACTIONS.FILTER_BY_MALE_GENDER
+                  }
                 >
                   Male
                 </RadioInputField>
@@ -70,6 +86,9 @@ const Filter = () => {
                   name="filter-by-gender"
                   onChange={() =>
                     productDispatch({ type: ACTIONS.FILTER_BY_FEMALE_GENDER })
+                  }
+                  checked={
+                    productState.gender === ACTIONS.FILTER_BY_FEMALE_GENDER
                   }
                 >
                   Female
@@ -101,7 +120,13 @@ const Filter = () => {
             <div className="filter-option-container flex-col">
               <h3>Filter by stock</h3>
               <div className="flex-col">
-                <CheckboxField name="filter-by-stock">
+                <CheckboxField
+                  name="filter-by-stock"
+                  onChange={() =>
+                    productDispatch({ type: ACTIONS.FILTER_BY_STOCK })
+                  }
+                  checked={productState.inStock}
+                >
                   Only show in stock products
                 </CheckboxField>
               </div>
@@ -109,7 +134,12 @@ const Filter = () => {
             <div className="filter-option-container flex-col">
               <h3>Filter by fast delivery</h3>
               <div className="flex-col">
-                <CheckboxField name="filter-by-delivery">
+                <CheckboxField
+                  name="filter-by-delivery"
+                  onChange={() =>
+                    productDispatch({ type: ACTIONS.FILTER_BY_DELIVERY })
+                  }
+                >
                   Only show products with fast delivery
                 </CheckboxField>
               </div>
@@ -122,8 +152,21 @@ const Filter = () => {
                   min="0"
                   max="10000"
                   step="2000"
+                  onChange={(e) =>
+                    productDispatch({
+                      type: ACTIONS.FILTER_BY_RANGE,
+                      payload: { rangeValue: e.target.value },
+                    })
+                  }
                 />
-                <p>The price range of </p>
+                {productState.rangeValue === "0" ? (
+                  <p>All price range</p>
+                ) : (
+                  <p>
+                    The price range of : 0 to{" "}
+                    <span>{productState.rangeValue}</span>
+                  </p>
+                )}
               </div>
             </div>
           </div>
