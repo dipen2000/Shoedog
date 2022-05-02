@@ -1,6 +1,6 @@
 import "./CheckboxField.css";
-// , onChange, checked
-const CheckboxField = ({ name, children }) => {
+//
+const CheckboxField = ({ name, children, onChange, checked }) => {
   return (
     <label htmlFor={name}>
       <input
@@ -8,8 +8,8 @@ const CheckboxField = ({ name, children }) => {
         type="checkbox"
         id={name}
         name={name}
-        // onChange={onChange}
-        // checked={checked}
+        onChange={onChange}
+        checked={checked}
       />
       {children}
     </label>

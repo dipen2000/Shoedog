@@ -7,9 +7,8 @@ import {
 import { ACTIONS } from "../../constants/actions";
 import { useProduct } from "../../context/productContext";
 const Filter = () => {
-  const sizes = [8, 9, 10, 11, 12];
+  const sizes = ["8", "9", "10", "11", "12"];
   const { productState, productDispatch } = useProduct();
-  console.log(productState.sizes);
   return (
     <div className="filter-container">
       <div className="filter-fixed-container">
@@ -88,7 +87,7 @@ const Filter = () => {
                       onChange={() =>
                         productDispatch({
                           type: ACTIONS.FILTER_BY_SIZE,
-                          payload: { size },
+                          payload: { size: size },
                         })
                       }
                       checked={productState.sizes.includes(size)}

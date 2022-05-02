@@ -12,8 +12,8 @@ const getFinalData = (state) => {
     filteredDataByGender,
     state
   );
-  // const finalData = filteredDataBySizes;
-  return filteredDataBySizes;
+  const finalData = filteredDataBySizes;
+  return finalData;
 };
 
 export { getFinalData };

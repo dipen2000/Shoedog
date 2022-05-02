@@ -47,10 +47,10 @@ const Home = () => {
         <section className="top-picks-container">
           <h2 className="mb-1 mt-1">Our top picks</h2>
           <div className="flex-row justify-space-evenly-flex">
+            {/* <ProductCard />
             <ProductCard />
             <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <ProductCard /> */}
           </div>
         </section>
       </ShoedogContainer>

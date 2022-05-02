@@ -15,6 +15,7 @@ const ProductProvider = ({ children }) => {
     () =>
       (async () => {
         const { data } = await axios.get("/api/products");
+        console.log(data.products);
         productDispatch({
           type: ACTIONS.DISPLAY_DATA,
           payload: { data: data.products },
