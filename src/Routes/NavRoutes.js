@@ -8,6 +8,7 @@ import {
   Signup,
   Logout,
   Page404,
+  SingleProductPage,
 } from "../Pages";
 import Mockman from "mockman-js";
 
@@ -16,8 +17,10 @@ const NavRoutes = () => {
     <Routes>
       <Route path="/mock" element={<Mockman />} />
       <Route path="/" element={<Home />} />
+      <Route path="/products/:categoryName" element={<Product />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/product" element={<Product />} />
+      <Route path="/product/:productId" element={<SingleProductPage />} />
       <Route path="/wishlist" element={<Wishlist />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />

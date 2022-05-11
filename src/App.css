@@ -56,3 +56,23 @@
   width : 20rem;
   height : 20rem;
 }
+
+.bord-3-red{
+  border : 3px solid red;
+}
+
+.bord-3-green{
+  border : 3px solid green;
+}
+
+.bord-3-yellow{
+  border : 3px solid yellow;
+}
+
+.bord-3-purple{
+  border : 3px solid purple;
+}
+
+.bord-3-blue{
+  border : 3px solid blue;
+}

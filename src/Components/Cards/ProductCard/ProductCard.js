@@ -1,6 +1,6 @@
 import { ButtonPrimary } from "../../Buttons";
 import "./ProductCard.css";
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onClick }) => {
   const {
     name,
     brand,
@@ -12,7 +12,7 @@ const ProductCard = ({ product }) => {
     hasFastDelivery,
   } = product;
   return (
-    <div className="product-card-container">
+    <div onClick={onClick} className="product-card-container curs-point">
       <div className="flex-col">
         <h4>{name}</h4>
         <h3>{brand}</h3>

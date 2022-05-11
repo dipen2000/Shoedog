@@ -19,6 +19,7 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16046376/2022/1/28/ef01a235-2a91-4fc1-b476-2f6473cf6b981643365239401-Nike-Dunk-High-1985-SP-Shoes-2611643365238966-1.jpg",
     brandLogo: "Nike",
     badge: "Trending",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
   {
     _id: uuid(),
@@ -33,6 +34,7 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16045958/2022/1/10/72596911-a21b-44b3-977a-557c0f9a3fe21641815893322-Nike-Blazer-Mid-77-Premium-Mens-Shoes-231641815892932-1.jpg",
     brandLogo: "Nike",
     badge: "",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
   {
     _id: uuid(),
@@ -47,6 +49,7 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16274292/2022/3/9/b23c33cf-6b72-44c2-bbed-dad5440faca91646827532195-Nike-Court-Vision-Alta-Womens-Shoes-9151646827531799-1.jpg",
     brandLogo: "Nike",
     badge: "New",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
   {
     _id: uuid(),
@@ -61,6 +64,7 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16509510/2022/1/27/f62d643d-957f-4a6e-bb38-f518fbbe48e71643261625979-ADIDAS-Originals-Men-Casual-Shoes-861643261625687-1.jpg",
     brandLogo: "Adidas",
     badge: "New",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
   {
     _id: uuid(),
@@ -75,6 +79,7 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16558402/2022/3/16/2107e0a2-804f-45e8-bcf1-d5c13deafc161647406253514-ADIDAS-Originals-Women-Purple-Solid-Suede-Forum-Bold-Sneaker-1.jpg",
     brandLogo: "Adidas",
     badge: "",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
   {
     _id: uuid(),
@@ -89,6 +94,7 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14864744/2021/10/21/c0e18424-5b32-4cba-b5ee-aecfbddd2d291634794481759-ADIDAS-Originals-Women-Casual-Shoes-9701634794481316-1.jpg",
     brandLogo: "Adidas",
     badge: "New",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
   {
     _id: uuid(),
@@ -103,6 +109,7 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/13427096/2021/8/10/048a352a-9883-4744-a7be-65610de968c31628578398923-Reebok-Classic-Unisex-Sports-Shoes-3281628578398548-1.jpg",
     brandLogo: "Reebok",
     badge: "Trending",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
   {
     _id: uuid(),
@@ -117,6 +124,7 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/14825960/2021/9/6/57f7dcb7-fca1-4e07-b4f6-b91b9b8e5e621630917957004-PUMA-Motorsport-Unisex-Red-Scuderia-Ferrari-A3ROCAT-Mid-Snea-1.jpg",
     brandLogo: "Puma",
     badge: "Trending",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
   {
     _id: uuid(),
@@ -131,6 +139,7 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/16825436/2022/2/22/c8160655-b39d-49ee-b0f6-c9ff4436cc241645519088104-PUMA-Motorsport-Unisex-Casual-Shoes-1121645519087710-1.jpg",
     brandLogo: "Puma",
     badge: "New",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
   {
     _id: uuid(),
@@ -145,5 +154,6 @@ export const products = [
     img: "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15105916/2021/12/20/e7d29f5e-76ba-4d32-ae15-41661d2974971639997848207-Puma-Women-Casual-Shoes-7501639997847795-1.jpg",
     brandLogo: "Puma",
     badge: "",
+    desc: "nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque",
   },
 ];

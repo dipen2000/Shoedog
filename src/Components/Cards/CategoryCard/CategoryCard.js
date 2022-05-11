@@ -1,7 +1,7 @@
 import "./CategoryCard.css";
-const CategoryCard = ({ category }) => {
+const CategoryCard = ({ category, onClick }) => {
   return (
-    <div className="category-card-container curs-point">
+    <div className="category-card-container curs-point" onClick={onClick}>
       <img
         className="img-resp"
         src={category.categoryImg}

@@ -9,7 +9,8 @@ import { useCategory } from "../../context/categoryContext";
 const Home = () => {
   const navigate = useNavigate();
   const { productState } = useProduct();
-  const { categoriesState } = useCategory();
+  const { categoriesState, setSelectedCategory } = useCategory();
+
   return (
     <>
       <ShoedogContainer>
@@ -33,7 +34,16 @@ const Home = () => {
           <div className="flex-row justify-space-evenly-flex">
             {categoriesState.length ? (
               categoriesState.map((category) => {
-                return <CategoryCard key={category._id} category={category} />;
+                return (
+                  <CategoryCard
+                    key={category._id}
+                    category={category}
+                    onClick={() => {
+                      setSelectedCategory(category.categoryName);
+                      navigate(`/products/${category.categoryName}`);
+                    }}
+                  />
+                );
               })
             ) : (
               <p>Loading...</p>
