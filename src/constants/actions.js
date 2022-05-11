@@ -10,6 +10,7 @@ const ACTIONS = {
   FILTER_BY_DELIVERY: "filter by delivery",
   FILTER_BY_RANGE: "filter by range",
   CLEAR_FILTER: "clear filter",
+  SET_WISHLIST: "set wishlist",
 };
 
 export { ACTIONS };

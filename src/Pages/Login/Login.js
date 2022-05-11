@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ShoedogContainer } from "../../Components/Wrapper/ShoedogContainer";
 import { InputField, PasswordField } from "../../Components/InputFields";
 import { ButtonPrimary } from "../../Components/Buttons";
-import { loginService } from "../../Services";
+import { loginService } from "../../Services/auth/loginService";
 import { useAuth } from "../../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 

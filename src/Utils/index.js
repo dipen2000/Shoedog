@@ -8,3 +8,4 @@ export { getFilteredDataByDelivery } from "./getFilteredDataByDelivery";
 export { getFilteredDataByRange } from "./getFilteredDataByRange";
 export { getSearchedData } from "./getSearchedData";
 export { getFilteredDataByCategory } from "./getFilteredDataByCategory";
+export { setWishlistArr } from "./setWishlistArr";

@@ -11,6 +11,7 @@ import {
   SingleProductPage,
 } from "../Pages";
 import Mockman from "mockman-js";
+import { RequiresAuth } from "../Components/RequiresAuth/RequiresAuth";
 
 const NavRoutes = () => {
   return (
@@ -18,10 +19,24 @@ const NavRoutes = () => {
       <Route path="/mock" element={<Mockman />} />
       <Route path="/" element={<Home />} />
       <Route path="/products/:categoryName" element={<Product />} />
-      <Route path="/cart" element={<Cart />} />
+      <Route
+        path="/cart"
+        element={
+          <RequiresAuth>
+            <Cart />
+          </RequiresAuth>
+        }
+      />
       <Route path="/product" element={<Product />} />
       <Route path="/product/:productId" element={<SingleProductPage />} />
-      <Route path="/wishlist" element={<Wishlist />} />
+      <Route
+        path="/wishlist"
+        element={
+          <RequiresAuth>
+            <Wishlist />
+          </RequiresAuth>
+        }
+      />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/signup" element={<Signup />} />

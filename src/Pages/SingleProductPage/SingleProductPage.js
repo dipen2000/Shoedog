@@ -2,15 +2,19 @@ import "./SingleProductPage.css";
 import { ShoedogContainer } from "../../Components/Wrapper/ShoedogContainer";
 import { useParams } from "react-router-dom";
 import { useProduct } from "../../context/productContext";
+import { useAuth } from "../../context/authContext";
+import { useWishlist } from "../../context/wishlistContext";
+import { ButtonPrimary } from "../../Components/Buttons";
 
 const SingleProductPage = () => {
   const { productId } = useParams();
   const { productState } = useProduct();
-  console.log(productId);
+  const { isAuth } = useAuth();
+  const { wishlistState, toggleWishlist } = useWishlist();
+
   const productSelected = productState.input.find(
     (product) => product._id === productId
   );
-  console.log(productSelected);
   const { brand, name, price, discount, desc, img } = productSelected;
   return (
     <>
@@ -38,7 +42,19 @@ const SingleProductPage = () => {
                 <p>desc : {desc}</p>
               </div>
               <div>
-                <button>Add to wishlist</button>
+                <ButtonPrimary
+                  onClick={() => {
+                    isAuth
+                      ? toggleWishlist(productSelected)
+                      : navigate("/login");
+                  }}
+                >
+                  {wishlistState.find(
+                    (item) => item._id === productSelected._id
+                  )
+                    ? "Remove from wishlist"
+                    : "Add to wishlist"}
+                </ButtonPrimary>
               </div>
               <div>
                 <button>Add to cart</button>
