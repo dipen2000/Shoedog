@@ -1,0 +1,12 @@
+.cart-card-container{
+    display : grid;
+    grid-template-columns: 4fr 7fr;
+    grid-template-rows: 1fr;
+    grid-gap: 2rem;
+    gap: 2rem;
+}
+
+.product-img-container{
+    height : 30rem;
+    width : 100%;
+}

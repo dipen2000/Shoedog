@@ -7,6 +7,8 @@ import { useProduct } from "../../context/productContext";
 import { useCategory } from "../../context/categoryContext";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { useCart } from "../../context/cartContext";
+import { useWishlist } from "../../context/wishlistContext";
 
 const ProductListing = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -15,7 +17,10 @@ const ProductListing = () => {
     useCategory();
   const finalData = getFinalData(productState, searchInput, selectedCategory);
   const navigate = useNavigate();
-
+  const { cartState } = useCart();
+  const { wishlistState } = useWishlist();
+  console.log(cartState);
+  console.log(wishlistState);
   return (
     <div className="flex-col video-listing-container">
       <div className="flex-row categories-section gap-2">

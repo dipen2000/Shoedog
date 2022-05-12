@@ -76,3 +76,7 @@
 .bord-3-blue{
   border : 3px solid blue;
 }
+
+.price-off{
+  color : green;
+}

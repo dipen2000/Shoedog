@@ -5,12 +5,14 @@ import { getWishlistItems } from "../Services/wishlist/getWishlistItems";
 import { removeItemFromWishlist } from "../Services/wishlist/removeItemFromWishlist";
 import { addItemToWishlist } from "../Services/wishlist/addItemToWishlist";
 import { useAuth } from "./authContext";
+import { useNavigate } from "react-router-dom";
 
 const wishlistContext = createContext();
 
 const useWishlist = () => useContext(wishlistContext);
 const WishlistProvider = ({ children }) => {
   const { isAuth, token } = useAuth();
+  const navigate = useNavigate();
   const [wishlistState, wishlistDispatch] = useReducer(wishlistReducer, []);
   useEffect(() => {
     if (isAuth) {
@@ -32,35 +34,39 @@ const WishlistProvider = ({ children }) => {
   }, [isAuth]);
 
   const toggleWishlist = async (product) => {
-    if (wishlistState.find((item) => item._id === product._id)) {
-      try {
-        const { data, status } = await removeItemFromWishlist(
-          token,
-          product._id
-        );
+    if (isAuth) {
+      if (wishlistState.find((item) => item._id === product._id)) {
+        try {
+          const { data, status } = await removeItemFromWishlist(
+            token,
+            product._id
+          );
 
-        if (status === 200) {
-          wishlistDispatch({
-            type: ACTIONS.SET_WISHLIST,
-            payload: { data: data.wishlist },
-          });
+          if (status === 200) {
+            wishlistDispatch({
+              type: ACTIONS.SET_WISHLIST,
+              payload: { data: data.wishlist },
+            });
+          }
+        } catch (e) {
+          console.log(e);
         }
-      } catch (e) {
-        console.log(e);
+      } else {
+        try {
+          const { data, status } = await addItemToWishlist(token, product);
+
+          if (status === 201) {
+            wishlistDispatch({
+              type: ACTIONS.SET_WISHLIST,
+              payload: { data: data.wishlist },
+            });
+          }
+        } catch (e) {
+          console.log(e);
+        }
       }
     } else {
-      try {
-        const { data, status } = await addItemToWishlist(token, product);
-
-        if (status === 201) {
-          wishlistDispatch({
-            type: ACTIONS.SET_WISHLIST,
-            payload: { data: data.wishlist },
-          });
-        }
-      } catch (e) {
-        console.log(e);
-      }
+      navigate("/login");
     }
   };
 
