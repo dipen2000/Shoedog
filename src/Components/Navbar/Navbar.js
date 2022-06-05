@@ -25,10 +25,6 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="right-nav-links-container flex-row align-center-flex justify-center-flex">
-          <label htmlFor="dark-mode">
-            <input className="curs-point" type="checkbox" name="dark-mode" />
-            switch to dark mode
-          </label>
           <div>
             <Link to="/wishlist" className="curs-point">
               Wishlist ({wishlistState.length})

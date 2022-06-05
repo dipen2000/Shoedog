@@ -1,0 +1,10 @@
+.btn-primary{
+    padding : 0.5rem 1rem;
+    outline : none;
+    background-color: var(--btn-primary-color);
+    color : var(--btn-primary-font-color);
+}
+
+.btn-primary:hover{
+    background-color : rgba(0, 0, 0, 0.809);
+}

@@ -46,22 +46,22 @@ const ProductCard = ({ product }) => {
           View
         </div>
         <div>
-          <ButtonPrimary
+          <button
             onClick={() => {
               toggleWishlist(product);
             }}
           >
             {itemInWishlist ? "Remove from wishlist" : "Add to wishlist"}
-          </ButtonPrimary>
+          </button>
         </div>
         <div>
-          <ButtonPrimary
+          <button
             onClick={() => {
               itemInCart ? navigate("/cart") : addToCart(product);
             }}
           >
             {itemInCart ? "Go to cart" : "Add to cart"}
-          </ButtonPrimary>
+          </button>
         </div>
       </div>
     </div>

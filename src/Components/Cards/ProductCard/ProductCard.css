@@ -7,3 +7,57 @@
 .temp-view{
     padding : 0.7rem;
 }
+
+.card-img-thumbnail{
+    width : 100%;
+    height : 25rem;
+    /* border : 3px solid red; */
+}
+
+.card-product-name{
+    font-size: 1.8rem;
+    font-family: var(--component-heading-font);
+}
+
+.card-product-desc-container{
+    padding : 0.5rem;
+}
+
+.size-orb{
+    width : 23px;
+    height : 23px;
+    border : 3px solid var(--shoe-dog-black);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-family: var(--component-heading-font);
+    font-size : 1.3rem;
+}
+
+.card-cart-wishlist-btn{
+    padding : 0.5rem;
+    margin : 0;
+    margin : 0 0.3rem ;
+}
+
+.cart-wishlist-CTA{
+    gap : 0.2rem;
+}
+
+.product-card-font{
+    font-family: var(--component-heading-font);
+}
+
+.price-container{
+    gap : 0.5rem;
+}
+
+.price-line-through{
+    text-decoration: line-through;
+}
+
+.savings-percentage{
+    color : green;
+}
