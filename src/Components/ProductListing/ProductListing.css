@@ -1,5 +1,4 @@
 .categories-section{
-    border : 3px solid green;
     padding : 1rem;
 }
 
@@ -8,17 +7,15 @@
 }
 
 .search-section{
-    border : 3px solid blue;
+    border : 3px solid var(--btn-primary-color);
     padding : 1rem;
 }
 
 .video-section{
-    border : 3px solid green;
     padding : 1rem;
 }
 
 .video-section-grid{
-    border : 3px solid purple;
     display : grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fill , minmax(26rem , 1fr));

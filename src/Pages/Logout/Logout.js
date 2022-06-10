@@ -1,22 +1,26 @@
 import "./Logout.css";
 import { useAuth } from "../../context/authContext";
 import { ShoedogContainer } from "../../Components/Wrapper/ShoedogContainer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ButtonPrimary } from "../../Components/Buttons";
 const Logout = () => {
   const { setIsAuth, setToken } = useAuth();
   setIsAuth(false);
   setToken("");
   localStorage.clear();
+  const navigate = useNavigate();
   return (
     <ShoedogContainer>
       <div className="flex-col logout-container justify-center-flex align-center-flex">
+        <i class="fa-solid fa-circle-check"></i>
         <h2>You are successfully logged out</h2>
-        <p>
-          Go back to the{" "}
-          <Link className="curs-point" to="/">
-            Home page
-          </Link>
-        </p>
+        <ButtonPrimary
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Go back to home
+        </ButtonPrimary>
       </div>
     </ShoedogContainer>
   );

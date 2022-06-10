@@ -1,5 +1,4 @@
 .searchbar-container{
-    border : 3px solid black;
     width : 100%;
 }
 
@@ -10,6 +9,9 @@
 .searchbar{
     padding : 0.8rem 0.5rem;
     flex-grow: 1;
+    outline: 0;
+    border : 3px solid var(--btn-primary-color);
+    /* font-size: ; */
 }
 
 .icon-parent-container{

@@ -19,8 +19,7 @@ const ProductListing = () => {
   const navigate = useNavigate();
   const { cartState } = useCart();
   const { wishlistState } = useWishlist();
-  console.log(cartState);
-  console.log(wishlistState);
+
   return (
     <div className="flex-col video-listing-container">
       <div className="flex-row categories-section gap-2">
@@ -59,7 +58,7 @@ const ProductListing = () => {
         />
       </div>
       <div className="video-section">
-        <h3>Products ({finalData.length})</h3>
+        <h3 className="page-heading">Products ({finalData.length})</h3>
         {productState.input.length === 0 ? (
           <div>Loading...</div>
         ) : finalData.length ? (

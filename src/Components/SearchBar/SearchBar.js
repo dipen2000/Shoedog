@@ -10,9 +10,9 @@ const SearchBar = ({ onChange, value }) => {
       </div>
 
       <input
+        className="searchbar"
         type="text"
         placeholder="Search"
-        className="searchbar"
         onChange={onChange}
         value={value}
       />

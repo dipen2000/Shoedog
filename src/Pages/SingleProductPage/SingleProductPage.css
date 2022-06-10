@@ -1,5 +1,4 @@
 .single-product-container{
-    border : 3px solid green;
     width : 80%;
     /* height : 50rem; */
     /* margin-top : 5rem; */
@@ -12,7 +11,7 @@
 }
 
 .single-product-detail-section{
-    border : 3px solid purple;
+    border : 3px solid var(--btn-primary-color);
     padding : 2rem;
 }
 
