@@ -19,7 +19,7 @@ const Logout = () => {
             navigate("/");
           }}
         >
-          Go back to home
+          Go back home
         </ButtonPrimary>
       </div>
     </ShoedogContainer>
