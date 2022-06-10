@@ -1,9 +1,9 @@
 import { ButtonPrimary } from "../../Buttons";
 import "./ProductCard.css";
 import { useWishlist } from "../../../context/wishlistContext";
-import { ACTIONS } from "../../../constants/actions";
+import { useCart } from "../../../context/cartContext";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../context/authContext";
+
 const ProductCard = ({ product }) => {
   const {
     name,
@@ -16,8 +16,11 @@ const ProductCard = ({ product }) => {
     hasFastDelivery,
   } = product;
   const navigate = useNavigate();
-  const { isAuth } = useAuth();
   const { wishlistState, toggleWishlist } = useWishlist();
+  const { cartState, addToCart } = useCart();
+
+  const itemInCart = cartState.find((item) => item._id === product._id);
+  const itemInWishlist = wishlistState.find((item) => item._id === product._id);
   return (
     <div className="product-card-container">
       <div className="flex-col">
@@ -45,16 +48,20 @@ const ProductCard = ({ product }) => {
         <div>
           <ButtonPrimary
             onClick={() => {
-              isAuth ? toggleWishlist(product) : navigate("/login");
+              toggleWishlist(product);
             }}
           >
-            {wishlistState.find((item) => item._id === product._id)
-              ? "Remove from wishlist"
-              : "Add to wishlist"}
+            {itemInWishlist ? "Remove from wishlist" : "Add to wishlist"}
           </ButtonPrimary>
         </div>
         <div>
-          <ButtonPrimary>Add to cart</ButtonPrimary>
+          <ButtonPrimary
+            onClick={() => {
+              itemInCart ? navigate("/cart") : addToCart(product);
+            }}
+          >
+            {itemInCart ? "Go to cart" : "Add to cart"}
+          </ButtonPrimary>
         </div>
       </div>
     </div>

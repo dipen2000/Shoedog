@@ -8,6 +8,7 @@ import { AuthProvider } from "./context/authContext";
 import { ProductProvider } from "./context/productContext";
 import { CategoryProvider } from "./context/categoryContext";
 import { WishlistProvider } from "./context/wishlistContext";
+import { CartProvider } from "./context/cartContext";
 
 // Call make Server
 makeServer();
@@ -18,9 +19,11 @@ ReactDOM.render(
       <AuthProvider>
         <ProductProvider>
           <WishlistProvider>
-            <CategoryProvider>
-              <App />
-            </CategoryProvider>
+            <CartProvider>
+              <CategoryProvider>
+                <App />
+              </CategoryProvider>
+            </CartProvider>
           </WishlistProvider>
         </ProductProvider>
       </AuthProvider>

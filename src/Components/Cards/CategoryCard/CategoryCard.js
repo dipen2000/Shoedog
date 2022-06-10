@@ -1,4 +1,5 @@
 import "./CategoryCard.css";
+
 const CategoryCard = ({ category, onClick }) => {
   return (
     <div className="category-card-container curs-point" onClick={onClick}>
