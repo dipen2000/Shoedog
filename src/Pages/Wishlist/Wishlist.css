@@ -1,5 +1,4 @@
 .wishlist-section-grid{
-    border : 3px solid purple;
     display : grid;
     justify-items: center;
     grid-template-columns: repeat(auto-fill , minmax(26rem , 1fr));

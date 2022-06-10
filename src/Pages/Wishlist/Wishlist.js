@@ -9,11 +9,11 @@ const Wishlist = () => {
   const navigate = useNavigate();
   return (
     <ShoedogContainer>
-      <div className="flex-col">
+      <div className="flex-col gap-1">
         <h2>Wishlist ({wishlistState.length})</h2>
         {wishlistState.length === 0 ? (
-          <div>
-            <div>Your wishlist is Empty</div>
+          <div className="empty-list">
+            <h2>Your wishlist is Empty</h2>
             <ButtonPrimary onClick={() => navigate("/product")}>
               Start Shopping
             </ButtonPrimary>

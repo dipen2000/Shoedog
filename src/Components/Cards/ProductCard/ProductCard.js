@@ -3,6 +3,8 @@ import "./ProductCard.css";
 import { useWishlist } from "../../../context/wishlistContext";
 import { useCart } from "../../../context/cartContext";
 import { useNavigate } from "react-router-dom";
+import { shortenProductName } from "../../../Utils";
+import { getThePriceOffPercentage } from "../../../Utils/cart";
 
 const ProductCard = ({ product }) => {
   const {
@@ -14,6 +16,7 @@ const ProductCard = ({ product }) => {
     price,
     discount,
     hasFastDelivery,
+    img,
   } = product;
   const navigate = useNavigate();
   const { wishlistState, toggleWishlist } = useWishlist();
@@ -22,47 +25,75 @@ const ProductCard = ({ product }) => {
   const itemInCart = cartState.find((item) => item._id === product._id);
   const itemInWishlist = wishlistState.find((item) => item._id === product._id);
   return (
-    <div className="product-card-container">
-      <div className="flex-col">
-        <h4>{name}</h4>
-        <h3>{brand}</h3>
-        <h3>{gender}</h3>
-        <div className="flex-row gap-1">
-          {sizes.map((size, index) => {
-            return <span key={index}>{size}</span>;
-          })}
+    <div className="grid-item product-card-container card-box-shadow">
+      {!inStock && (
+        <div className="out-of-stock-container flex-row align-center-flex justify-center-flex">
+          <div className="out-of-stock-text">Out of stock</div>
         </div>
-        <p>{inStock ? "In stock" : "out of stocks"}</p>
-        <p>{price}</p>
-        <p>
-          {hasFastDelivery
-            ? "has fast delivery"
-            : "does not have fast delivery"}
-        </p>
-        <div
-          className="temp-view bord-3-red curs-point"
-          onClick={() => navigate(`/product/${product._id}`)}
-        >
-          View
+      )}
+      <div
+        className={`flex-col justify-space-between-flex curs-point ${
+          !inStock && "pointer-none"
+        }`}
+        onClick={() => {
+          navigate(`/product/${product._id}`);
+        }}
+      >
+        <div className="flex-col">
+          <div className="each-product-img-container">
+            <img className="img-resp" src={img} alt="hello" />
+          </div>
+          <div className="product-detail-section flex-col">
+            <strong>{shortenProductName(name)}</strong>
+            <div className="flex-row justify-space-between-flex ">
+              <div className="flex-row align-center-flex gap-z-5">
+                {sizes.map((size, index) => {
+                  return (
+                    <span className="single-size-container" key={index}>
+                      {size}
+                    </span>
+                  );
+                })}
+              </div>
+              <span>{gender}</span>
+            </div>
+            <div className="flex-row gap-z-5">
+              <span>Rs. {price - discount}</span>
+              <span>
+                <s>Rs. {price}</s>
+              </span>
+              <strong className="price-off">
+                {getThePriceOffPercentage(price, discount)}%
+              </strong>
+            </div>
+          </div>
         </div>
-        <div>
-          <ButtonPrimary
-            onClick={() => {
-              toggleWishlist(product);
-            }}
-          >
-            {itemInWishlist ? "Remove from wishlist" : "Add to wishlist"}
-          </ButtonPrimary>
-        </div>
-        <div>
-          <ButtonPrimary
-            onClick={() => {
+        <div className="product-card-CTA-section flex-row">
+          <button
+            className={`btn btn-primary-solid shoetube-btn-main product-card-add-to-cart ${
+              !inStock && "pointer-none"
+            }`}
+            onClick={(e) => {
+              e.stopPropagation();
               itemInCart ? navigate("/cart") : addToCart(product);
             }}
           >
             {itemInCart ? "Go to cart" : "Add to cart"}
-          </ButtonPrimary>
+          </button>
         </div>
+      </div>
+      <div
+        className={`absolute wishlist-container curs-point ${
+          !inStock && "pointer-none"
+        }`}
+        onClick={(e) => {
+          e.stopPropagation();
+          toggleWishlist(product);
+        }}
+      >
+        <i
+          className={`${itemInWishlist ? "fa-solid" : "fa-regular"} fa-heart`}
+        ></i>
       </div>
     </div>
   );

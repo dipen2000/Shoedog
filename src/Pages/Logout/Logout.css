@@ -3,5 +3,10 @@
 }
 
 .logout-container{
-    
+    gap : 1rem;
+    margin-top : 10rem;
+}
+
+.logout-container i{
+    font-size: 7rem;
 }

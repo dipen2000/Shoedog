@@ -1,3 +1,8 @@
+:root {
+  --btn-primary-color : rgba(0, 0, 0, 0.925);
+  --btn-primary-font-color : white;
+}
+
 .flex-row{
   display : flex;
     flex-direction: row;
@@ -43,6 +48,10 @@
   margin-top: 1rem;
 }
 
+.gap-z-5{
+  gap : 0.5rem;
+}
+
 .gap-1{
   gap : 1rem;
 }
@@ -79,4 +88,63 @@
 
 .price-off{
   color : green;
+}
+
+.card-box-shadow {
+  box-shadow: 0 3px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-box-shadow:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.shoetube-btn-main{
+  background-color : var(--btn-primary-color);
+  border-radius: 0;
+  font-size : 1.4rem;
+}
+
+.shoetube-btn-main-cart{
+font-size : 1.4rem;
+padding : 0.7rem;
+}
+
+.shoetube-btn-main:hover{
+background-color : rgba(0, 0, 0, 0.887);
+}
+
+
+.shoetube-btn-main-outline{
+border-radius: 0;
+border : 2px solid  var(--btn-primary-color);
+color : var(--btn-primary-color);
+font-size : 1.4rem;
+padding : 0.7rem;
+}
+
+.shoetube-btn-main-outline:hover{
+background-color :var(--btn-primary-color);
+color : var(--btn-primary-font-color);
+}
+
+.empty-list{
+  margin-top : 4rem;
+  display : flex;
+  flex-direction : column;
+  gap : 1rem;
+  justify-content: center;
+  align-items: center; 
+}
+
+.page-heading{
+  margin-bottom : 1rem;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.pointer-none{
+  pointer-events : none;
 }

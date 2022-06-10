@@ -1,9 +1,129 @@
 .product-card-container{
-    border : 3px solid green;
     width : 22rem;
     height : 30rem;
 }
 
 .temp-view{
     padding : 0.7rem;
+}
+
+.card-img-thumbnail{
+    width : 100%;
+    height : 25rem;
+}
+
+.card-product-name{
+    font-size: 1.8rem;
+    font-family: var(--component-heading-font);
+}
+
+.card-product-desc-container{
+    padding : 0.5rem;
+}
+
+.size-orb{
+    width : 23px;
+    height : 23px;
+    border : 3px solid var(--shoe-dog-black);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-family: var(--component-heading-font);
+    font-size : 1.3rem;
+}
+
+.card-cart-wishlist-btn{
+    padding : 0.5rem;
+    margin : 0;
+    margin : 0 0.3rem ;
+}
+
+.cart-wishlist-CTA{
+    gap : 0.2rem;
+}
+
+.product-card-font{
+    font-family: var(--component-heading-font);
+}
+
+.price-container{
+    gap : 0.5rem;
+}
+
+.price-line-through{
+    text-decoration: line-through;
+}
+
+.savings-percentage{
+    color : green;
+}
+
+.each-product-img-container{
+    height : 25rem;
+    background-color: yellow;
+}
+
+.grid-item{
+    position: relative;
+    height : 38rem;
+}
+
+.product-detail-section{
+    padding : 0.5rem;
+}
+
+.single-size-container{
+    border : 3px solid black;
+    border-radius: 50%;
+    height : 25px;
+    width : 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content : center;
+    align-items: center;
+}
+
+.product-card-CTA-section{
+    padding : 0.3rem;
+}
+
+.product-card-add-to-cart{
+    flex-grow: 1;
+    padding : 0.8rem 0.8rem;
+    color : var(--btn-primary-font-color);
+    /* font-family: var(); */
+    font-family: var(--component-heading-font);
+}
+
+.wishlist-container{
+    top : 10px;
+    right : 10px;
+    background-color: rgba(0, 0, 0, 0.249);
+    display: flex;
+    flex-direction: row;
+    justify-content : center;
+    align-items: center;
+    border-radius: 50%;
+    height : 30px;
+    width : 30px;
+}
+
+.out-of-stock-container{
+    position: absolute;
+    top : 0;
+    left : 0;
+    width : 100%;
+    height : 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    pointer-events: none;
+    
+}
+
+.out-of-stock-text{
+    padding : 1rem;
+  background-color: var(--btn-primary-color);
+  color : var(--btn-primary-font-color);
 }

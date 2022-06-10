@@ -16,10 +16,11 @@ const CartPrice = () => {
     deliveryCharge: 50,
   };
   return (
-    <div className="flex-col gap-1 bord-3-yellow">
+    <div className="flex-col gap-1">
       <div className="flex-row align-center-flex justify-center-flex">
         <h2>Price details</h2>
       </div>
+
       <div className="flex-col gap-1">
         <div className="flex-row align-center-flex justify-space-between-flex">
           <span>Price ({getNumberOfItemsInTheCart(cartState)}) :</span>

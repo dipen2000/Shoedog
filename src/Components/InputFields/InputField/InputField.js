@@ -10,7 +10,7 @@ const InputField = ({
 }) => {
   return (
     <div className="input-field-container">
-      <div className="flex-col">
+      <div className="flex-col gap-z-5">
         <label htmlFor={name}>{fieldTitle}</label>
         <input
           className="input-field"

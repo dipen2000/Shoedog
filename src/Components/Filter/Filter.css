@@ -1,9 +1,4 @@
-/* .filter-container{
-    border : 3px solid blue;
-} */
-
 .filter-fixed-container{
-    border : 3px solid green;
     height : 90vh;
     overflow: auto;
     position: fixed;
@@ -16,7 +11,6 @@
 
 .filter-option-container{
     padding : 0.8rem;
-    border : 3px solid blueviolet;
     gap : 0.5rem;
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid black;
 }

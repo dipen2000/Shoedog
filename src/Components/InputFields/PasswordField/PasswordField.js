@@ -11,7 +11,7 @@ const PasswordField = ({
 }) => {
   return (
     <div className="password-field-container">
-      <div className="flex-col">
+      <div className="flex-col gap-z-5">
         <label htmlFor={name}>{fieldTitle}</label>
         <div className="flex-row">
           <input

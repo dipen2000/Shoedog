@@ -12,13 +12,12 @@ const CartCard = ({ product }) => {
   } = useCart();
   const { img, brand, name, gender, price, discount, _id, qty } = product;
   return (
-    <div className="cart-card-container bord-3-yellow">
-      <div className="product-img-container bord-3-red">
+    <div className="cart-card-container card-box-shadow">
+      <div className="product-img-container">
         <img className="img-resp" src={img} alt={`${brand} ${name}`} />
       </div>
-      <div className="flex-col bord-3-green">
-        <h3>{brand}</h3>
-        <h3>{name}</h3>
+      <div className="flex-col gap-1 cart-product-detail-section">
+        <h2>{name}</h2>
         <p>{gender}</p>
         <div className="flex-row gap-1">
           <span>Rs. {price - discount}</span>
@@ -29,23 +28,38 @@ const CartCard = ({ product }) => {
             % {getThePriceOffPercentage(price, discount)} off
           </span>
         </div>
-        <div className="flex-row gap-1">
-          <ButtonPrimary onClick={() => decrementProductQuantity(product)}>
-            -
-          </ButtonPrimary>
-          <span>{qty}</span>
-          <ButtonPrimary onClick={() => incrementProductQuantity(product)}>
-            +
-          </ButtonPrimary>
+        <div className="flex-row">
+          <div className="flex-row gap-1 quantity-incr-decr-section align-center-flex">
+            <span
+              className="curs-point incr-decr-span"
+              onClick={() => decrementProductQuantity(product)}
+            >
+              -
+            </span>
+            <span>{qty}</span>
+            <span
+              className="curs-point incr-decr-span"
+              onClick={() => incrementProductQuantity(product)}
+            >
+              +
+            </span>
+          </div>
         </div>
-        <div>
-          <ButtonPrimary onClick={() => moveToWishlist(product)}>
+
+        <div className="flex-col">
+          <button
+            className="btn btn-primary-solid shoetube-btn-main"
+            onClick={() => moveToWishlist(product)}
+          >
             Move to wishlist
-          </ButtonPrimary>
-          <br />
-          <ButtonPrimary onClick={() => removeFromCart(_id)}>
+          </button>
+
+          <button
+            className="btn btn-primary-outline shoetube-btn-main-outline"
+            onClick={() => removeFromCart(_id)}
+          >
             remove from cart
-          </ButtonPrimary>
+          </button>
         </div>
       </div>
     </div>

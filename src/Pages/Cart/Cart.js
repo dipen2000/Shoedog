@@ -10,18 +10,20 @@ const Cart = () => {
   const navigate = useNavigate();
   return (
     <ShoedogContainer>
-      <div className="cart-page-container bord-3-green">
+      <div className="cart-page-container  flex-col gap-1">
         <h2>My cart ({cartState.length})</h2>
         {cartState.length === 0 ? (
-          <div>
-            <p>Your cart is empty</p>
-            <ButtonPrimary onClick={() => navigate("/product")}>
-              Start shopping
-            </ButtonPrimary>
+          <div className="empty-list">
+            <h2>Your cart is empty</h2>
+            <div>
+              <ButtonPrimary onClick={() => navigate("/product")}>
+                Start shopping
+              </ButtonPrimary>
+            </div>
           </div>
         ) : (
           <div className="cart-page-main-grid">
-            <div className="flex-col gap-2 bord-3-purple">
+            <div className="flex-col gap-2">
               {cartState.map((product) => {
                 return <CartCard key={product._id} product={product} />;
               })}

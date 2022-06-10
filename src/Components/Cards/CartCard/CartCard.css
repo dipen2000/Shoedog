@@ -10,3 +10,19 @@
     height : 30rem;
     width : 100%;
 }
+
+.cart-product-detail-section{
+    padding : 1rem;
+}
+
+.quantity-incr-decr-section{
+    border : 3px solid var(--btn-primary-color);
+}
+
+.incr-decr-span{
+    padding : 0.8rem;
+}
+
+.incr-decr-span:hover{
+    background-color : rgba(0, 0, 0, 0.239);
+}
