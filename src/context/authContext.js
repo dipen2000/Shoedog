@@ -10,7 +10,6 @@ const AuthProvider = ({ children }) => {
 
   const [isAuth, setIsAuth] = useState(initialAuthVal || false);
   const [token, setToken] = useState(initialToken || "");
-  console.log(isAuth, token);
   return (
     <authContext.Provider value={{ isAuth, setIsAuth, token, setToken }}>
       {children}

@@ -1,0 +1,22 @@
+.single-product-container{
+    border : 3px solid green;
+    width : 80%;
+    /* height : 50rem; */
+    /* margin-top : 5rem; */
+    margin : 5rem auto 0 auto;
+    padding : 3rem;
+    display: grid;
+    grid-template-columns : 1fr 1fr;
+    grid-template-rows: 1fr;
+    /* grid-gap: 2rem; */
+}
+
+.single-product-detail-section{
+    border : 3px solid purple;
+    padding : 2rem;
+}
+
+.single-product-img-container{
+    height : 50rem;
+    width : 40rem;
+}
