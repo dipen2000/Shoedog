@@ -1,2 +1,3 @@
 export { authContext } from "./authContext";
-import { productContext } from "./productContext";
+export { productContext } from "./productContext";
+export { wishlistContext } from "./wishlistContext";

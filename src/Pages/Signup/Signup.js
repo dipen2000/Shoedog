@@ -1,7 +1,7 @@
 import { ShoedogContainer } from "../../Components/Wrapper/ShoedogContainer";
 import { InputField, PasswordField } from "../../Components/InputFields";
 import { ButtonPrimary } from "../../Components/Buttons";
-import { signupService } from "../../Services";
+import { signupService } from "../../Services/auth/signupService";
 import { useAuth } from "../../context/authContext";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";

@@ -7,6 +7,7 @@ import { useProduct } from "../../context/productContext";
 import { useCategory } from "../../context/categoryContext";
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+
 const ProductListing = () => {
   const [searchInput, setSearchInput] = useState("");
   const { productState } = useProduct();
@@ -14,6 +15,7 @@ const ProductListing = () => {
     useCategory();
   const finalData = getFinalData(productState, searchInput, selectedCategory);
   const navigate = useNavigate();
+
   return (
     <div className="flex-col video-listing-container">
       <div className="flex-row categories-section gap-2">
@@ -58,13 +60,7 @@ const ProductListing = () => {
         ) : finalData.length ? (
           <div className="video-section-grid">
             {finalData.map((product) => {
-              return (
-                <ProductCard
-                  key={product._id}
-                  product={product}
-                  onClick={() => navigate(`/product/${product._id}`)}
-                />
-              );
+              return <ProductCard key={product._id} product={product} />;
             })}
           </div>
         ) : (
