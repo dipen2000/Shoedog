@@ -1,0 +1,17 @@
+.category-card-container{
+    border : 3px solid blue;
+    width : 25rem;
+    height : 15rem;
+    position : relative;
+}
+
+.collection-name-overlay-container{
+    position: absolute;
+    height : 100%;
+    width : 100%;
+    z-index: 5;
+    top : 0;
+    left : 0;
+    right : 0;
+    bottom : 0;
+}

@@ -1,6 +1,15 @@
 .navbar{
     border : 3px solid black;
     padding : 1rem;
+    font-family: var(--component-heading-font);
+    background-color : white;
+    
+}
+
+.navbar-sticky{
+    position: sticky;
+    top : 0;
+    z-index: 800;
 }
 
 .mid-nav-links-container{
