@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 import { ButtonPrimary } from "../Buttons";
 import { useAuth } from "../../context/authContext";
 import { useWishlist } from "../../context/wishlistContext";
@@ -10,6 +10,9 @@ const Navbar = () => {
   const { isAuth } = useAuth();
   const { wishlistState } = useWishlist();
   const { cartState } = useCart();
+  const activeStyle = {
+    "border-bottom": "2px solid var(--btn-primary-color)",
+  };
   return (
     <header className="navbar-sticky">
       <nav className="navbar flex-row justify-space-between-flex align-center-flex">
@@ -17,12 +20,20 @@ const Navbar = () => {
           <h2 className="navbar-title">SHOEDOG</h2>
         </Link>
         <div className="mid-nav-links-container flex-row align-center-flex justify-center-flex">
-          <Link to="/" className="curs-point">
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            to="/"
+            className="curs-point"
+          >
             Home
-          </Link>
-          <Link to="/product" className="curs-point">
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            to="/product"
+            className="curs-point"
+          >
             Products
-          </Link>
+          </NavLink>
         </div>
         <div className="right-nav-links-container flex-row align-center-flex justify-center-flex">
           <div>
