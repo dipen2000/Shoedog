@@ -3,6 +3,26 @@
   --btn-primary-font-color : white;
 }
 
+::-webkit-scrollbar{
+  width : 1.5rem;
+}
+
+::-webkit-scrollbar-track{
+  background-color: rgba(221, 213, 213, 0.998);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--btn-primary-color);
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(0, 0, 0, 0.813);
+}
+
+.flex-grow-1{
+  flex-grow: 1;
+}
+
 .flex-row{
   display : flex;
     flex-direction: row;
@@ -48,6 +68,14 @@
   margin-top: 1rem;
 }
 
+.mt-2{
+  margin-top : 2rem;
+}
+
+.mb-2{
+  margin-bottom: 2rem;
+}
+
 .gap-z-5{
   gap : 0.5rem;
 }
@@ -85,6 +113,11 @@
 .bord-3-blue{
   border : 3px solid blue;
 }
+
+.bord-3-black{
+  border : 3px solid black;
+}
+
 
 .price-off{
   color : green;
@@ -147,4 +180,34 @@ color : var(--btn-primary-font-color);
 
 .pointer-none{
   pointer-events : none;
+}
+
+.modal-section-overlay{
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  left : 0;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal-close-icon-container{
+  background-color: var(--btn-primary-color);
+  color : var(--btn-primary-font-color);
+  height: 2.5rem;
+  width : 2.5rem;
+  display : flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+button:disabled{
+  background-color : rgb(122, 115, 115);
+  color : var(--btn-primary-color);
 }

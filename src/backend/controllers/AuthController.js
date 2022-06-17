@@ -36,6 +36,7 @@ export const signupHandler = function (schema, request) {
       updatedAt: formatDate(),
       ...rest,
       cart: [],
+      addresses: [],
       wishlist: [],
     };
     const createdUser = schema.users.create(newUser);

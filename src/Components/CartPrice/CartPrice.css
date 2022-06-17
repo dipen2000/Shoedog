@@ -1,0 +1,11 @@
+.apply-btn{
+    padding : 0.5rem 0.8rem;
+    font-family: var(--component-heading-font);
+    color : var(--btn-primary-font-color);
+    background-color: var(--btn-primary-color);
+    cursor: pointer;
+}
+
+.apply-btn:hover{
+    background-color : rgba(0, 0, 0, 0.887);
+}

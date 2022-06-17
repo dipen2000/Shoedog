@@ -1,0 +1,26 @@
+.checkout-grid-section{
+    display : grid;
+    grid-template-columns : 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap : 2rem;
+}
+
+.checkout-container{
+    width : 75%;
+}
+
+.checkout-summary-section-heading-container{
+    padding : 0.8rem;
+    border-bottom: 2px solid var(--btn-primary-color);
+}
+
+.checkout-summary-section{
+    padding : 0.8rem;
+}
+
+.single-address-container{
+    padding : 0.8rem;
+    border : 2px solid var(--btn-primary-color);
+    border-radius : 10px;
+    align-items: baseline;
+}

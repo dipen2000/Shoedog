@@ -12,6 +12,9 @@ const ACTIONS = {
   CLEAR_FILTER: "clear filter",
   SET_WISHLIST: "set wishlist",
   SET_CART: "set cart",
+  SET_ADDRESS: "set address",
+  REMOVE_ADDRESS: "remove address",
+  ADD_ADDRESS: "add address",
 };
 
 export { ACTIONS };

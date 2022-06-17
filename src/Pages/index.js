@@ -7,3 +7,4 @@ export { Signup } from "./Signup/Signup";
 export { Logout } from "./Logout/Logout";
 export { Page404 } from "./Page404/Page404";
 export { SingleProductPage } from "./SingleProductPage/SingleProductPage";
+export { CheckOut } from "./CheckOut/CheckOut";

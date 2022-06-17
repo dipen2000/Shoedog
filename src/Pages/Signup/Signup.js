@@ -13,7 +13,7 @@ const Signup = () => {
     hide: { pwd: true, confPwd: true },
   });
 
-  const { setIsAuth, setToken } = useAuth();
+  const { setIsAuth, setToken, setUser } = useAuth();
 
   const inputChangeHandler = (e) => {
     const { name, value } = e.target;
@@ -40,11 +40,15 @@ const Signup = () => {
   const signUpHandler = async (e) => {
     e.preventDefault();
     try {
-      const { encodedToken } = await signupService(inputData.input);
+      const { encodedToken, createdUser } = await signupService(
+        inputData.input
+      );
       setIsAuth(true);
       setToken(encodedToken);
+      setUser(createdUser);
       localStorage.setItem("isAuth", true);
       localStorage.setItem("token", encodedToken);
+      localStorage.setItem("user", JSON.stringify(createdUser));
       setInputData((prevData) => ({
         ...prevData,
         input: {

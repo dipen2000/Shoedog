@@ -10,7 +10,7 @@ const Cart = () => {
   const navigate = useNavigate();
   return (
     <ShoedogContainer>
-      <div className="cart-page-container  flex-col gap-1">
+      <div className="cart-page-container flex-col gap-1">
         <h2>My cart ({cartState.length})</h2>
         {cartState.length === 0 ? (
           <div className="empty-list">

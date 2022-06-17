@@ -13,13 +13,13 @@ const Login = () => {
     hide: { pwd: true },
   });
 
-  const { setIsAuth, setToken } = useAuth();
+  const { setIsAuth, setToken, setUser } = useAuth();
 
   const navigate = useNavigate();
 
   const guestLoginCredentials = {
-    email: "adarshbalika@gmail.com",
-    password: "adarshbalika",
+    email: "dipenchavda123@gmail.com",
+    password: "dipenchavda123",
   };
 
   const inputChangeHandler = (e) => {
@@ -40,11 +40,13 @@ const Login = () => {
   const loginHandler = async (e) => {
     e.preventDefault();
     try {
-      const { encodedToken } = await loginService(inputData.input);
+      const { encodedToken, foundUser } = await loginService(inputData.input);
       setIsAuth(true);
       setToken(encodedToken);
+      setUser(foundUser);
       localStorage.setItem("isAuth", true);
       localStorage.setItem("token", encodedToken);
+      localStorage.setItem("user", JSON.stringify(foundUser));
       setInputData((prevData) => ({
         ...prevData,
         input: { email: "", password: "" },

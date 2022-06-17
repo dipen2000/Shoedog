@@ -9,7 +9,7 @@ const Wishlist = () => {
   const navigate = useNavigate();
   return (
     <ShoedogContainer>
-      <div className="flex-col gap-1">
+      <div className="flex-col gap-1 mt-2">
         <h2>Wishlist ({wishlistState.length})</h2>
         {wishlistState.length === 0 ? (
           <div className="empty-list">
