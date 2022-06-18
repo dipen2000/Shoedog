@@ -15,6 +15,7 @@ const ACTIONS = {
   SET_ADDRESS: "set address",
   REMOVE_ADDRESS: "remove address",
   ADD_ADDRESS: "add address",
+  SET_ORDER: "set order",
 };
 
 export { ACTIONS };

@@ -1,0 +1,47 @@
+.user-detail-container{
+    width : 60%;
+}
+
+.user-detail-card{
+    width : 40rem;
+}
+
+.user-detail-section-tabs-grid{
+    display : grid;
+    grid-template-columns : 1fr 1fr;
+    grid-template-rows : 1fr;
+}
+
+.user-detail-tab{
+    padding : 1rem;
+}
+
+.user-detail-content{
+    padding : 1rem;
+}
+
+.user-detail-profile-container{
+    height : 15rem;
+}
+
+.user-detail-icon{
+    font-size : 6rem;
+}
+
+.user-detail-amount-container{
+    padding: 0.8rem;
+    width : 100%;
+    border-bottom: 2px solid var(--btn-primary-color);
+}
+
+.user-order-detail-card-container{
+    width : 30rem;
+    display : grid;
+    grid-template-columns: 4fr 6fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+}
+
+.user-order-card-img-container{
+    /* height : 20rem; */
+}

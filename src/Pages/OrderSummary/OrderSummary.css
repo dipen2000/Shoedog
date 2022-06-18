@@ -1,0 +1,26 @@
+.order-summary-amount-container{
+    padding: 0.8rem;
+    width : 100%;
+    border-bottom: 2px solid var(--btn-primary-color);
+}
+
+.order-summary-container{
+    width : 60%;
+}
+
+.order-detail-card-container{
+    width : 40rem;
+    display : grid;
+    grid-template-columns: 4fr 6fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+}
+
+.order-card-img-container{
+    height : 20rem;
+    width : 100%;
+}
+
+.order-card-desc-section{
+    padding : 0.8rem;
+}

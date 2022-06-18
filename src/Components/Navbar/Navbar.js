@@ -11,7 +11,7 @@ const Navbar = () => {
   const { wishlistState } = useWishlist();
   const { cartState } = useCart();
   const activeStyle = {
-    "border-bottom": "2px solid var(--btn-primary-color)",
+    borderBottom: "2px solid var(--btn-primary-color)",
   };
   return (
     <header className="navbar-sticky">
@@ -46,11 +46,17 @@ const Navbar = () => {
               Cart {cartState.length}
             </Link>
           </div>
-          <ButtonPrimary
-            onClick={() => navigate(`${isAuth ? "/logout" : "/login"}`)}
-          >
-            {isAuth ? "Logout" : "Login"}
-          </ButtonPrimary>
+          {isAuth ? (
+            <div>
+              <Link to="/userDetail" className="curs-point">
+                <i className="fa-solid fa-circle-user navbar-user-icon"></i>
+              </Link>
+            </div>
+          ) : (
+            <ButtonPrimary onClick={() => navigate("/login")}>
+              {"Login"}
+            </ButtonPrimary>
+          )}
         </div>
       </nav>
     </header>

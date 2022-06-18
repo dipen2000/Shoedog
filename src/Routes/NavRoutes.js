@@ -10,6 +10,8 @@ import {
   Page404,
   SingleProductPage,
   CheckOut,
+  OrderSummary,
+  UserDetail,
 } from "../Pages";
 import Mockman from "mockman-js";
 import { RequiresAuth } from "../Components/RequiresAuth/RequiresAuth";
@@ -43,6 +45,30 @@ const NavRoutes = () => {
         element={
           <RequiresAuth>
             <CheckOut />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="/checkout"
+        element={
+          <RequiresAuth>
+            <CheckOut />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="/orderSummary"
+        element={
+          <RequiresAuth>
+            <OrderSummary />
+          </RequiresAuth>
+        }
+      />
+      <Route
+        path="/userDetail"
+        element={
+          <RequiresAuth>
+            <UserDetail />
           </RequiresAuth>
         }
       />

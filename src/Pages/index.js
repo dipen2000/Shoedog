@@ -8,3 +8,5 @@ export { Logout } from "./Logout/Logout";
 export { Page404 } from "./Page404/Page404";
 export { SingleProductPage } from "./SingleProductPage/SingleProductPage";
 export { CheckOut } from "./CheckOut/CheckOut";
+export { OrderSummary } from "./OrderSummary/OrderSummary";
+export { UserDetail } from "./UserDetail/UserDetail";

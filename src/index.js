@@ -11,6 +11,7 @@ import { WishlistProvider } from "./context/wishlistContext";
 import { CartProvider } from "./context/cartContext";
 import { CouponProvider } from "./context/couponContext";
 import { AddressProvider } from "./context/addressesContext";
+import { OrderProvider } from "./context/orderContext";
 
 // Call make Server
 makeServer();
@@ -25,7 +26,9 @@ ReactDOM.render(
               <CategoryProvider>
                 <CouponProvider>
                   <AddressProvider>
-                    <App />
+                    <OrderProvider>
+                      <App />
+                    </OrderProvider>
                   </AddressProvider>
                 </CouponProvider>
               </CategoryProvider>

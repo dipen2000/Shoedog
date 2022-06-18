@@ -6,16 +6,22 @@ import { useCoupons } from "../../context/couponContext";
 import { useAddress } from "../../context/addressesContext";
 import { useState } from "react";
 import { AddressModal } from "../../Components/Modal/AddressModal/AddressModal";
+import { useOrder } from "../../context/orderContext";
+import { useNavigate } from "react-router-dom";
 import {
   getTotalPrice,
   getTotalDiscount,
   getPriceCutFromCoupon,
+  loadScript,
+  getPayableAmount,
 } from "../../Utils/cart";
 import { ACTIONS } from "../../constants/actions";
 const CheckOut = () => {
-  const { cartState } = useCart();
+  const navigate = useNavigate();
+  const { cartState, cartDispatch } = useCart();
   const { couponState } = useCoupons();
   const { addressState, addressDispatch } = useAddress();
+  const { orderDispatch } = useOrder();
 
   const cartPriceDetail = {
     totalPriceBeforeDiscount: getTotalPrice(cartState),
@@ -32,6 +38,60 @@ const CheckOut = () => {
   );
 
   const [addressModal, setAddressModal] = useState(false);
+
+  const amount = getPayableAmount(selectedCoupon, cartPriceDetail);
+
+  const resetCart = () => {
+    orderDispatch({
+      type: ACTIONS.SET_ORDER,
+      payload: { order: [...cartState], totalAmount: amount },
+    });
+    cartDispatch({
+      type: ACTIONS.SET_CART,
+      payload: { data: [] },
+    });
+  };
+
+  const makePayment = async (amount) => {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+    if (!res) {
+      // showToast({
+      //   title: "Razorpay SDK failed to load. Are you online?",
+      //   type: "success",
+      // });
+      console.log("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
+    const options = {
+      key: process.env.REACT_APP_RAZORPAY_API_KEY,
+      key_id: process.env.REACT_APP_RAZORPAY_API_KEY,
+      currency: "INR",
+      amount: amount * 100,
+      name: "Shoedog",
+      description: "Thank you for shopping with Shoedog.",
+      handler: async function (response) {
+        if (response.razorpay_payment_id) {
+          resetCart();
+          // showToast({
+          //   type: "success",
+          //   title: `Items purchased successfully with payment ID: ${response.razorpay_payment_id}`,
+          // });
+          console.log("Items purchased successfully");
+          navigate("/orderSummary");
+        }
+      },
+
+      prefill: {
+        name: "Shoedog",
+        email: "company@shoedog.com",
+        contact: "9999999999",
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
 
   return (
     <ShoedogContainer>
@@ -223,8 +283,10 @@ const CheckOut = () => {
                   </div>
                 </div>
               </div>
-              {/* !addressState.selectedAddressHolder */}
-              <ButtonPrimary disabled={!addressState.selectedAddressHolder}>
+              <ButtonPrimary
+                disabled={!addressState.selectedAddressHolder}
+                onClick={() => makePayment(amount)}
+              >
                 Place order
               </ButtonPrimary>
             </div>

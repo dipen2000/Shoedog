@@ -5,3 +5,5 @@ export { getThePriceOffPercentage } from "./getThePriceOffPercentage";
 export { isCouponApplicable } from "./isCouponApplicable";
 export { getPriceCutFromCoupon } from "./getPriceCutFromCoupon";
 export { getGrandTotal } from "./getGrandTotal";
+export { loadScript } from "./loadScript";
+export { getPayableAmount } from "./getPayableAmount";

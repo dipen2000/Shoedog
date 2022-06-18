@@ -28,3 +28,7 @@
 .nav-link{
     cursor : pointer;
 }
+
+.navbar-user-icon{
+    font-size: 3rem;
+}
