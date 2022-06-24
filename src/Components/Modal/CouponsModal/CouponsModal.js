@@ -30,14 +30,16 @@ const CouponsModal = ({ setShowCouponsModal, cartPriceDetail }) => {
                         ...prevState,
                         selectedCoupon: coupon.name,
                       }));
-                      toast.success(
-                        `${coupon.name} coupon applied to your order.`,
-                        {
-                          style: {
-                            "z-index": 99999999,
-                          },
-                        }
-                      );
+                      toast(`${coupon.name} coupon applied to your order.`, {
+                        icon: "✅",
+                        style: {
+                          borderRadius: "0",
+                          boxShadow: "4px 4px var(--navbar-bg-color)",
+                          background: "black",
+                          color: "#fff",
+                          zIndex: 99999,
+                        },
+                      });
                     }}
                     checked={couponState.selectedCoupon === coupon.name}
                     disabled={

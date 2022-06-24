@@ -2,7 +2,8 @@
     width : 80%;
     /* height : 50rem; */
     /* margin-top : 5rem; */
-    margin : 5rem auto 0 auto;
+    border : 3px solid var(--btn-primary-color);
+    margin : 3rem auto 0 auto;
     padding : 3rem;
     display: grid;
     grid-template-columns : 1fr 1fr;
@@ -11,7 +12,7 @@
 }
 
 .single-product-detail-section{
-    border : 3px solid var(--btn-primary-color);
+    /* border : 3px solid var(--btn-primary-color); */
     padding : 2rem;
 }
 

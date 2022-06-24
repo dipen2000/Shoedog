@@ -17,15 +17,18 @@ const Home = () => {
         <section className="hero-img-container">
           <img
             className="img-resp"
-            src="https://i.postimg.cc/DwNskF02/daniel-storek-JM-q-KEd1-GMI-unsplash.jpg"
+            src="https://i.postimg.cc/KcPj4xpq/quinton-coetzee-XOz-Jo-Gs1sv-Q-unsplash-1.jpg"
             alt="Hero img"
           />
-          <div className="flex-col hero-CTA-section">
-            <h2 className="heading-2">Get you shoe game up!</h2>
+          <div className="flex-col hero-CTA-section gap-1">
+            <h2 className="heading-2">Get your shoe game up!</h2>
             <div>
-              <ButtonPrimary onClick={() => navigate("/product")}>
+              <button
+                className="btn btn-primary-solid shoetube-btn-main product-card-add-to-cart"
+                onClick={() => navigate("/product")}
+              >
                 Shop now
-              </ButtonPrimary>
+              </button>
             </div>
           </div>
         </section>

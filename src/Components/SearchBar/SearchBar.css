@@ -4,14 +4,18 @@
 
 .search-icon{
     /* border : 3px solid green; */
+    color : var(--navbar-bg-color);
     font-size : 2rem;
 }
 .searchbar{
     padding : 0.8rem 0.5rem;
     flex-grow: 1;
     outline: 0;
+    color : var(--btn-primary-font-color);
+    background-color : var(--primary-background-color);
+    font-family: var(--component-heading-font);
     border : 3px solid var(--btn-primary-color);
-    /* font-size: ; */
+    
 }
 
 .icon-parent-container{

@@ -3,6 +3,7 @@
     width : 25rem;
     height : 15rem;
     position : relative;
+    border : 3px solid var(--btn-primary-color);
 }
 
 

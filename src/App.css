@@ -127,7 +127,7 @@
 
 
 .price-off{
-  color : green;
+  color : var(--navbar-bg-color);
 }
 
 .card-box-shadow {
@@ -140,9 +140,10 @@
 }
 
 .shoetube-btn-main{
-  background-color : var(--btn-primary-color);
+  background-color : var(--navbar-bg-color);
   border-radius: 0;
   font-size : 1.4rem;
+  color : var(--primary-background-color);
 }
 
 .shoetube-btn-main-cart{
@@ -151,21 +152,22 @@ padding : 0.7rem;
 }
 
 .shoetube-btn-main:hover{
-background-color : rgba(0, 0, 0, 0.887);
+background-color : #aa69dbc9;
 }
 
 
 .shoetube-btn-main-outline{
 border-radius: 0;
-border : 2px solid  var(--btn-primary-color);
-color : var(--btn-primary-color);
+border : 3px solid var(--navbar-bg-color);
+color : var(--navbar-bg-color);
 font-size : 1.4rem;
+background-color: var(--primary-background-color);
 padding : 0.7rem;
 }
 
 .shoetube-btn-main-outline:hover{
-background-color :var(--btn-primary-color);
-color : var(--btn-primary-font-color);
+background-color :var(--navbar-bg-color);
+color : var(--primary-background-color);
 }
 
 .empty-list{
@@ -230,6 +232,24 @@ button:disabled{
 
 .container-box-shadow-black:hover{
   box-shadow: 5px 5px black;
+}
+
+.container-box-shadow-purple{
+  box-shadow: 4px 4px var(--navbar-bg-color);
+  transition: 0.3s;
+}
+
+.container-box-shadow-purple:hover{
+  box-shadow: 6px 6px var(--navbar-bg-color);
+}
+
+.container-box-shadow-purple-big{
+  box-shadow: 7px 7px var(--navbar-bg-color);
+  transition: 0.3s;
+}
+
+.container-box-shadow-purple-big:hover{
+  box-shadow: 9px 9px var(--navbar-bg-color);
 }
 
 .svg-icon{

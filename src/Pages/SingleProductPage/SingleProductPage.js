@@ -22,17 +22,17 @@ const SingleProductPage = () => {
   return (
     <>
       <ShoedogContainer>
-        <div className="single-product-container">
-          <div className="single-product-detail-section card-box-shadow">
+        <div className="single-product-container container-box-shadow-purple-big">
+          <div className="single-product-detail-section">
             <div className="flex-row justify-center-flex">
               <div className="single-product-img-container">
                 <img className="img-resp" src={img} alt="img" />
               </div>
             </div>
           </div>
-          <div className="single-product-detail-section card-box-shadow">
+          <div className="single-product-detail-section">
             <div className="flex-col gap-1">
-              <h3>{brand}</h3>
+              <h3 style={{ color: "var(--navbar-bg-color)" }}>{brand}</h3>
               <h2>{name}</h2>
               <div className="flex-row gap-1">
                 <span>Rs. {price - discount}</span>

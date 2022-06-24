@@ -47,7 +47,15 @@ const CartProvider = ({ children }) => {
             type: ACTIONS.SET_CART,
             payload: { data: data.cart },
           });
-          toast.success("Product added to the cart.");
+          toast("Product added to cart.", {
+            icon: "✅",
+            style: {
+              borderRadius: "0",
+              boxShadow: "4px 4px var(--navbar-bg-color)",
+              background: "black",
+              color: "#fff",
+            },
+          });
         }
       } catch (e) {
         console.log(e);
@@ -67,7 +75,15 @@ const CartProvider = ({ children }) => {
             type: ACTIONS.SET_CART,
             payload: { data: data.cart },
           });
-          toast.success("Product removed from the cart.");
+          toast("Product removed from the cart.", {
+            icon: "✅",
+            style: {
+              borderRadius: "0",
+              boxShadow: "4px 4px var(--navbar-bg-color)",
+              background: "black",
+              color: "#fff",
+            },
+          });
         }
       } catch (e) {
         console.log(e);
@@ -91,7 +107,15 @@ const CartProvider = ({ children }) => {
               type: ACTIONS.SET_WISHLIST,
               payload: { data: data.wishlist },
             });
-            toast.success("Product moved to wishlist.");
+            toast("Product moved to wishlist.", {
+              icon: "✅",
+              style: {
+                borderRadius: "0",
+                boxShadow: "4px 4px var(--navbar-bg-color)",
+                background: "black",
+                color: "#fff",
+              },
+            });
           }
         } catch (e) {
           console.log(e);
@@ -117,7 +141,15 @@ const CartProvider = ({ children }) => {
             type: ACTIONS.SET_CART,
             payload: { data: data.cart },
           });
-          toast.success("Decremented the product quantity.");
+          toast("Decremented the product quantity.", {
+            icon: "✅",
+            style: {
+              borderRadius: "0",
+              boxShadow: "4px 4px var(--navbar-bg-color)",
+              background: "black",
+              color: "#fff",
+            },
+          });
         }
         const productToRemove = cartState.find((item) => item.qty <= 1);
         if (productToRemove) {
@@ -144,7 +176,15 @@ const CartProvider = ({ children }) => {
             type: ACTIONS.SET_CART,
             payload: { data: data.cart },
           });
-          toast.success("Incremented the product quantity.");
+          toast("Incremented the product quantity.", {
+            icon: "✅",
+            style: {
+              borderRadius: "0",
+              boxShadow: "4px 4px var(--navbar-bg-color)",
+              background: "black",
+              color: "#fff",
+            },
+          });
         }
       } catch (e) {
         console.log(e);

@@ -1,5 +1,4 @@
 const NikeLogo = ({ isCategorySelected }) => {
-  console.log(isCategorySelected);
   return (
     <svg
       className="svg-icon"

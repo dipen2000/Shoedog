@@ -5,6 +5,7 @@ import { useCart } from "../../../context/cartContext";
 import { useNavigate } from "react-router-dom";
 import { shortenProductName } from "../../../Utils";
 import { getThePriceOffPercentage } from "../../../Utils/cart";
+import { getTheCategoryLogo } from "../../../Utils";
 
 const ProductCard = ({ product }) => {
   const {
@@ -25,7 +26,7 @@ const ProductCard = ({ product }) => {
   const itemInCart = cartState.find((item) => item._id === product._id);
   const itemInWishlist = wishlistState.find((item) => item._id === product._id);
   return (
-    <div className="grid-item product-card-container card-box-shadow">
+    <div className="grid-item bord-3-black product-card-container container-box-shadow-purple-big">
       {!inStock && (
         <div className="out-of-stock-container flex-row align-center-flex justify-center-flex">
           <div className="out-of-stock-text">Out of stock</div>
@@ -40,8 +41,11 @@ const ProductCard = ({ product }) => {
         }}
       >
         <div className="flex-col">
-          <div className="each-product-img-container">
+          <div className="each-product-img-container relative">
             <img className="img-resp" src={img} alt="hello" />
+            <div className="absolute product-card-brand-logo-container">
+              {getTheCategoryLogo(brand)}
+            </div>
           </div>
           <div className="product-detail-section flex-col">
             <strong>{shortenProductName(name)}</strong>
@@ -92,7 +96,9 @@ const ProductCard = ({ product }) => {
         }}
       >
         <i
-          className={`${itemInWishlist ? "fa-solid" : "fa-regular"} fa-heart`}
+          className={`${
+            itemInWishlist ? "fa-solid" : "fa-regular"
+          } fa-heart wishlist-icon`}
         ></i>
       </div>
     </div>

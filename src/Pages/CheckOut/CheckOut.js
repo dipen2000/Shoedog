@@ -58,7 +58,15 @@ const CheckOut = () => {
       "https://checkout.razorpay.com/v1/checkout.js"
     );
     if (!res) {
-      toast.success("Razorpay SDK failed to load. Are you online?");
+      toast("Razorpay SDK failed to load. Are you online?", {
+        icon: "✅",
+        style: {
+          borderRadius: "0",
+          boxShadow: "4px 4px var(--navbar-bg-color)",
+          background: "black",
+          color: "#fff",
+        },
+      });
       return;
     }
     const options = {
@@ -71,7 +79,15 @@ const CheckOut = () => {
       handler: async function (response) {
         if (response.razorpay_payment_id) {
           resetCart();
-          toast.success("Items purchased successfully");
+          toast("Items purchased successfully.", {
+            icon: "✅",
+            style: {
+              borderRadius: "0",
+              boxShadow: "4px 4px var(--navbar-bg-color)",
+              background: "black",
+              color: "#fff",
+            },
+          });
           navigate("/orderSummary");
         }
       },
@@ -117,9 +133,15 @@ const CheckOut = () => {
                                 type: ACTIONS.SET_ADDRESS,
                                 payload: { data: address.name },
                               });
-                              toast.success(
-                                `${address.name}'s address selected.`
-                              );
+                              toast(`${address.name}'s address selected.`, {
+                                icon: "✅",
+                                style: {
+                                  borderRadius: "0",
+                                  boxShadow: "4px 4px var(--navbar-bg-color)",
+                                  background: "black",
+                                  color: "#fff",
+                                },
+                              });
                             }}
                           />
                           <div className="flex-grow-1 flex-col">
@@ -132,9 +154,16 @@ const CheckOut = () => {
                                     type: ACTIONS.REMOVE_ADDRESS,
                                     payload: { data: address.name },
                                   });
-                                  toast.success(
-                                    `${address.name}'s address removed.`
-                                  );
+                                  toast(`${address.name}'s address removed.`, {
+                                    icon: "✅",
+                                    style: {
+                                      borderRadius: "0",
+                                      boxShadow:
+                                        "4px 4px var(--navbar-bg-color)",
+                                      background: "black",
+                                      color: "#fff",
+                                    },
+                                  });
                                 }}
                               ></i>
                             </div>

@@ -3,7 +3,7 @@ import "./CategoryCard.css";
 const CategoryCard = ({ category, onClick }) => {
   return (
     <div
-      className="category-card-container curs-point card-box-shadow"
+      className="category-card-container curs-point container-box-shadow-purple"
       onClick={onClick}
     >
       <img

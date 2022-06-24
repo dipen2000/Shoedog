@@ -10,7 +10,7 @@ const SearchBar = ({ onChange, value }) => {
       </div>
 
       <input
-        className="searchbar"
+        className="searchbar container-box-shadow-purple"
         type="text"
         placeholder="Search"
         onChange={onChange}

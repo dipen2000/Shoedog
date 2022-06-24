@@ -62,6 +62,12 @@ const Signup = () => {
       }));
       toast(`Welcome ${createdUser.firstName}!`, {
         icon: "👏",
+        style: {
+          borderRadius: "0",
+          boxShadow: "4px 4px var(--navbar-bg-color)",
+          background: "black",
+          color: "#fff",
+        },
       });
       navigate("/");
     } catch (e) {

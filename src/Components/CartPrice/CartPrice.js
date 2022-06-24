@@ -79,7 +79,15 @@ const CartPrice = () => {
                       ...prevState,
                       selectedCoupon: "",
                     }));
-                    toast.success("Removed the coupon.");
+                    toast("Removed the coupon.", {
+                      icon: "✅",
+                      style: {
+                        borderRadius: "0",
+                        boxShadow: "4px 4px var(--navbar-bg-color)",
+                        background: "black",
+                        color: "#fff",
+                      },
+                    });
                   }}
                 ></i>{" "}
                 <strong>{selectedCoupon.name}</strong>:

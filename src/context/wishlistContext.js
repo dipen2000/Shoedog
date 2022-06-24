@@ -48,7 +48,15 @@ const WishlistProvider = ({ children }) => {
               type: ACTIONS.SET_WISHLIST,
               payload: { data: data.wishlist },
             });
-            toast.success("Product added to the wishlist.");
+            toast("Product removed from the wishlist.", {
+              icon: "✅",
+              style: {
+                borderRadius: "0",
+                boxShadow: "4px 4px var(--navbar-bg-color)",
+                background: "black",
+                color: "#fff",
+              },
+            });
           }
         } catch (e) {
           console.log(e);
@@ -62,7 +70,15 @@ const WishlistProvider = ({ children }) => {
               type: ACTIONS.SET_WISHLIST,
               payload: { data: data.wishlist },
             });
-            toast.success("Product removed from the wishlist.");
+            toast("Product added to the wishlist.", {
+              icon: "✅",
+              style: {
+                borderRadius: "0",
+                boxShadow: "4px 4px var(--navbar-bg-color)",
+                background: "black",
+                color: "#fff",
+              },
+            });
           }
         } catch (e) {
           console.log(e);

@@ -11,7 +11,15 @@ const Logout = () => {
   setToken("");
   localStorage.clear();
   useEffect(() => {
-    toast.success("User logged out.");
+    toast("User logged out.", {
+      icon: "✅",
+      style: {
+        borderRadius: "0",
+        boxShadow: "4px 4px var(--navbar-bg-color)",
+        background: "black",
+        color: "#fff",
+      },
+    });
   }, []);
   const navigate = useNavigate();
   return (

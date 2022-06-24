@@ -12,10 +12,16 @@
 
 .clear{
     text-decoration: underline;
+    color : var(--navbar-bg-color);
+    font-weight : bold;
 }
 
 .filter-option-container{
     padding : 0.8rem;
     gap : 0.5rem;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--navbar-bg-color);
+}
+
+.filter-heading{
+    color : var(--navbar-bg-color);
 }
