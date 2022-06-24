@@ -6,6 +6,7 @@ import { removeItemFromWishlist } from "../Services/wishlist/removeItemFromWishl
 import { addItemToWishlist } from "../Services/wishlist/addItemToWishlist";
 import { useAuth } from "./authContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const wishlistContext = createContext();
 
@@ -47,6 +48,7 @@ const WishlistProvider = ({ children }) => {
               type: ACTIONS.SET_WISHLIST,
               payload: { data: data.wishlist },
             });
+            toast.success("Product added to the wishlist.");
           }
         } catch (e) {
           console.log(e);
@@ -60,6 +62,7 @@ const WishlistProvider = ({ children }) => {
               type: ACTIONS.SET_WISHLIST,
               payload: { data: data.wishlist },
             });
+            toast.success("Product removed from the wishlist.");
           }
         } catch (e) {
           console.log(e);

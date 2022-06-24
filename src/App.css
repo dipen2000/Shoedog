@@ -1,23 +1,30 @@
 :root {
   --btn-primary-color : rgba(0, 0, 0, 0.925);
   --btn-primary-font-color : white;
+  --primary-background-color : #1F1D21;
+  --navbar-bg-color : #AA69DB;
+}
+
+.App{
+  font-family: var(--component-heading-font);
+  /* outline : 3px solid blue; */
+  color : var(--btn-primary-font-color);
+  min-height: 100vh;
+  background-color : var(--primary-background-color);
 }
 
 ::-webkit-scrollbar{
-  width : 1.5rem;
+  width : 0.8rem;
 }
 
 ::-webkit-scrollbar-track{
-  background-color: rgba(221, 213, 213, 0.998);
+  background-color: var(--primary-background-color);
 }
 
 ::-webkit-scrollbar-thumb{
-  background-color: var(--btn-primary-color);
+  background-color: var(--navbar-bg-color);
 }
 
-::-webkit-scrollbar-thumb:hover{
-  background-color: rgba(0, 0, 0, 0.813);
-}
 
 .flex-grow-1{
   flex-grow: 1;
@@ -178,6 +185,10 @@ color : var(--btn-primary-font-color);
   position: absolute;
 }
 
+.relative{
+  position: relative;
+}
+
 .pointer-none{
   pointer-events : none;
 }
@@ -210,4 +221,20 @@ color : var(--btn-primary-font-color);
 button:disabled{
   background-color : rgb(122, 115, 115);
   color : var(--btn-primary-color);
+}
+
+.container-box-shadow-black{
+  box-shadow: 3px 3px black;
+  transition: 0.3s;
+}
+
+.container-box-shadow-black:hover{
+  box-shadow: 5px 5px black;
+}
+
+.svg-icon{
+  height : 100%;
+  width : 100%;
+  
+  /* color : white; */
 }

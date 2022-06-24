@@ -5,6 +5,7 @@ import { useCart } from "../../context/cartContext";
 import { useState } from "react";
 import { useCoupons } from "../../context/couponContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 import {
   getNumberOfItemsInTheCart,
   getTotalPrice,
@@ -73,12 +74,13 @@ const CartPrice = () => {
               <span>
                 <i
                   className="fa-solid fa-times curs-point"
-                  onClick={() =>
+                  onClick={() => {
                     setCouponState((prevState) => ({
                       ...prevState,
                       selectedCoupon: "",
-                    }))
-                  }
+                    }));
+                    toast.success("Removed the coupon.");
+                  }}
                 ></i>{" "}
                 <strong>{selectedCoupon.name}</strong>:
               </span>

@@ -8,6 +8,7 @@ import { useState } from "react";
 import { AddressModal } from "../../Components/Modal/AddressModal/AddressModal";
 import { useOrder } from "../../context/orderContext";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 import {
   getTotalPrice,
   getTotalDiscount,
@@ -57,11 +58,7 @@ const CheckOut = () => {
       "https://checkout.razorpay.com/v1/checkout.js"
     );
     if (!res) {
-      // showToast({
-      //   title: "Razorpay SDK failed to load. Are you online?",
-      //   type: "success",
-      // });
-      console.log("Razorpay SDK failed to load. Are you online?");
+      toast.success("Razorpay SDK failed to load. Are you online?");
       return;
     }
     const options = {
@@ -74,11 +71,7 @@ const CheckOut = () => {
       handler: async function (response) {
         if (response.razorpay_payment_id) {
           resetCart();
-          // showToast({
-          //   type: "success",
-          //   title: `Items purchased successfully with payment ID: ${response.razorpay_payment_id}`,
-          // });
-          console.log("Items purchased successfully");
+          toast.success("Items purchased successfully");
           navigate("/orderSummary");
         }
       },
@@ -119,24 +112,30 @@ const CheckOut = () => {
                               addressState.selectedAddressHolder ===
                               address.name
                             }
-                            onChange={() =>
+                            onChange={() => {
                               addressDispatch({
                                 type: ACTIONS.SET_ADDRESS,
                                 payload: { data: address.name },
-                              })
-                            }
+                              });
+                              toast.success(
+                                `${address.name}'s address selected.`
+                              );
+                            }}
                           />
                           <div className="flex-grow-1 flex-col">
                             <div className="flex-row align-center-flex justify-space-between-flex">
                               <strong>{address.name}</strong>
                               <i
                                 className="fa-solid fa-trash curs-point"
-                                onClick={() =>
+                                onClick={() => {
                                   addressDispatch({
                                     type: ACTIONS.REMOVE_ADDRESS,
                                     payload: { data: address.name },
-                                  })
-                                }
+                                  });
+                                  toast.success(
+                                    `${address.name}'s address removed.`
+                                  );
+                                }}
                               ></i>
                             </div>
                             <span>{address.street}</span>

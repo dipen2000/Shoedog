@@ -1,6 +1,7 @@
 import "./CouponsModal.css";
 import { useCoupons } from "../../../context/couponContext";
 import { isCouponApplicable } from "../../../Utils/cart";
+import { toast } from "react-hot-toast";
 const CouponsModal = ({ setShowCouponsModal, cartPriceDetail }) => {
   const { couponState, setCouponState } = useCoupons();
 
@@ -24,12 +25,20 @@ const CouponsModal = ({ setShowCouponsModal, cartPriceDetail }) => {
                   <input
                     type="radio"
                     name="coupons"
-                    onChange={() =>
+                    onChange={() => {
                       setCouponState((prevState) => ({
                         ...prevState,
                         selectedCoupon: coupon.name,
-                      }))
-                    }
+                      }));
+                      toast.success(
+                        `${coupon.name} coupon applied to your order.`,
+                        {
+                          style: {
+                            "z-index": 99999999,
+                          },
+                        }
+                      );
+                    }}
                     checked={couponState.selectedCoupon === coupon.name}
                     disabled={
                       !isCouponApplicable(

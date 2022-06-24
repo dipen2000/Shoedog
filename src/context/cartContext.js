@@ -10,6 +10,8 @@ import { useWishlist } from "./wishlistContext";
 import { addItemToWishlist } from "../Services/wishlist/addItemToWishlist";
 import { decrementQuantityService } from "../Services/cart/decrementQuantityService";
 import { incrementQuantityService } from "../Services/cart/incrementQuantityService";
+import { toast } from "react-hot-toast";
+
 const cartContext = createContext();
 
 const useCart = () => useContext(cartContext);
@@ -45,6 +47,7 @@ const CartProvider = ({ children }) => {
             type: ACTIONS.SET_CART,
             payload: { data: data.cart },
           });
+          toast.success("Product added to the cart.");
         }
       } catch (e) {
         console.log(e);
@@ -64,6 +67,7 @@ const CartProvider = ({ children }) => {
             type: ACTIONS.SET_CART,
             payload: { data: data.cart },
           });
+          toast.success("Product removed from the cart.");
         }
       } catch (e) {
         console.log(e);
@@ -87,6 +91,7 @@ const CartProvider = ({ children }) => {
               type: ACTIONS.SET_WISHLIST,
               payload: { data: data.wishlist },
             });
+            toast.success("Product moved to wishlist.");
           }
         } catch (e) {
           console.log(e);
@@ -112,6 +117,7 @@ const CartProvider = ({ children }) => {
             type: ACTIONS.SET_CART,
             payload: { data: data.cart },
           });
+          toast.success("Decremented the product quantity.");
         }
         const productToRemove = cartState.find((item) => item.qty <= 1);
         if (productToRemove) {
@@ -138,6 +144,7 @@ const CartProvider = ({ children }) => {
             type: ACTIONS.SET_CART,
             payload: { data: data.cart },
           });
+          toast.success("Incremented the product quantity.");
         }
       } catch (e) {
         console.log(e);

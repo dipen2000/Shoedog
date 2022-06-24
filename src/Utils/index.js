@@ -10,3 +10,4 @@ export { getSearchedData } from "./getSearchedData";
 export { getFilteredDataByCategory } from "./getFilteredDataByCategory";
 export { setWishlistArr } from "./setWishlistArr";
 export { shortenProductName } from "./shortenProductName";
+export { getTheCategoryLogo } from "./getTheCategoryLogo";

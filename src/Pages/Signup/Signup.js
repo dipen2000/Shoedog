@@ -5,6 +5,7 @@ import { signupService } from "../../Services/auth/signupService";
 import { useAuth } from "../../context/authContext";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 import "./Signup.css";
 const Signup = () => {
   const navigate = useNavigate();
@@ -59,26 +60,14 @@ const Signup = () => {
           confirmPassword: "",
         },
       }));
+      toast(`Welcome ${createdUser.firstName}!`, {
+        icon: "👏",
+      });
       navigate("/");
     } catch (e) {
       console.log(e);
     }
   };
-
-  //   const checkForEmptyPasswordFields = () => {
-  //     if (
-  //       inputData.input.password === undefined &&
-  //       inputData.input.confirmPassword === undefined
-  //     ) {
-  //       console.log(inputData.input.password, inputData.input.confirmPassword);
-  //       return true;
-  //     } else {
-  //       console.log(inputData.input.password, inputData.input.confirmPassword);
-  //       return false;
-  //     }
-  //   };
-
-  //   console.log(checkForEmptyPasswordFields());
 
   return (
     <ShoedogContainer>

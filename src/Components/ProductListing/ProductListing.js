@@ -9,6 +9,8 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCart } from "../../context/cartContext";
 import { useWishlist } from "../../context/wishlistContext";
+import { NikeLogo, AdidasLogo, ReebokLogo, PumaLogo } from "../../assets";
+import { getTheCategoryLogo } from "../../Utils";
 
 const ProductListing = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -25,8 +27,14 @@ const ProductListing = () => {
       <div className="flex-row categories-section gap-2">
         <Chip
           style={{
-            backgroundColor: selectedCategory === "All" ? "black" : "",
-            color: selectedCategory === "All" ? "white" : "",
+            backgroundColor:
+              selectedCategory === "All"
+                ? "var(--navbar-bg-color)"
+                : "var(--primary-background-color)",
+            color:
+              selectedCategory === "All"
+                ? "var(--primary-background-color)"
+                : "var(--btn-primary-font-color)",
           }}
           onClick={() => {
             setSelectedCategory("All");
@@ -35,18 +43,21 @@ const ProductListing = () => {
           All
         </Chip>
         {categoriesState.map((category) => {
+          const isCategorySelected = selectedCategory === category.categoryName;
           return (
             <Chip
               style={{
-                backgroundColor:
-                  selectedCategory === category.categoryName ? "black" : "",
-                color:
-                  selectedCategory === category.categoryName ? "white" : "",
+                backgroundColor: isCategorySelected
+                  ? "var(--navbar-bg-color)"
+                  : "var(--primary-background-color)",
+                color: isCategorySelected
+                  ? "var(--primary-background-color)"
+                  : "var(--btn-primary-font-color)",
               }}
               key={category._id}
               onClick={() => setSelectedCategory(category.categoryName)}
             >
-              {category.categoryName}
+              {getTheCategoryLogo(category.categoryName, isCategorySelected)}
             </Chip>
           );
         })}

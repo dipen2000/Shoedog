@@ -6,6 +6,7 @@ import { ButtonPrimary } from "../../Components/Buttons";
 import { loginService } from "../../Services/auth/loginService";
 import { useAuth } from "../../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
   const [inputData, setInputData] = useState({
@@ -51,6 +52,9 @@ const Login = () => {
         ...prevData,
         input: { email: "", password: "" },
       }));
+      toast(`Welcome back ${foundUser.firstName}!`, {
+        icon: "👏",
+      });
       navigate("/");
     } catch (e) {
       console.error(e);

@@ -36,20 +36,36 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className="right-nav-links-container flex-row align-center-flex justify-center-flex">
-          <div>
-            <Link to="/wishlist" className="curs-point">
-              Wishlist {wishlistState.length}
-            </Link>
-          </div>
-          <div>
-            <Link to="/cart" className="curs-point">
-              Cart {cartState.length}
-            </Link>
-          </div>
+          {isAuth && (
+            <div className="right-nav-links-container flex-row align-center-flex justify-center-flex">
+              <div className="nav-icon-container relative container-box-shadow-black">
+                <Link to="/wishlist" className="curs-point">
+                  <i className="fa-solid fa-heart"></i>
+                  <div className="absolute"></div>
+                </Link>
+                {wishlistState.length > 0 && (
+                  <div className="absolute badge-on-nav-icon">
+                    {wishlistState.length}
+                  </div>
+                )}
+              </div>
+              <div className="nav-icon-container relative container-box-shadow-black">
+                <Link to="/cart" className="curs-point">
+                  <i className="fa-solid fa-cart-shopping"></i>
+                </Link>
+                {cartState.length > 0 && (
+                  <div className="absolute badge-on-nav-icon">
+                    {cartState.length}
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
           {isAuth ? (
-            <div>
+            <div className="nav-icon-container relative container-box-shadow-black">
               <Link to="/userDetail" className="curs-point">
-                <i className="fa-solid fa-circle-user navbar-user-icon"></i>
+                <i className="fa-solid fa-circle-user"></i>
               </Link>
             </div>
           ) : (
