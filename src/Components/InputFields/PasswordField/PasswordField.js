@@ -24,7 +24,7 @@ const PasswordField = ({
             value={value}
             required={required}
           />
-          <div>
+          <div style={{ border: "3px solid var(--navbar-bg-color)" }}>
             <div className="flex-row justify-center-flex align-center-flex input-field-icon-container-height">
               <span className="input-field-icon">{children}</span>
             </div>

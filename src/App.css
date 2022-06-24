@@ -143,6 +143,7 @@
   background-color : var(--navbar-bg-color);
   border-radius: 0;
   font-size : 1.4rem;
+  font-family: var(--component-heading-font);
   color : var(--primary-background-color);
 }
 
@@ -161,6 +162,7 @@ border-radius: 0;
 border : 3px solid var(--navbar-bg-color);
 color : var(--navbar-bg-color);
 font-size : 1.4rem;
+font-family: var(--component-heading-font);
 background-color: var(--primary-background-color);
 padding : 0.7rem;
 }
@@ -250,6 +252,10 @@ button:disabled{
 
 .container-box-shadow-purple-big:hover{
   box-shadow: 9px 9px var(--navbar-bg-color);
+}
+
+.modal-icon-color{
+  color : var(--navbar-bg-color);
 }
 
 .svg-icon{

@@ -119,6 +119,13 @@ const CheckOut = () => {
                       return (
                         <div
                           key={address._id}
+                          style={{
+                            border:
+                              addressState.selectedAddressHolder ===
+                              address.name
+                                ? "3px solid var(--navbar-bg-color)"
+                                : "",
+                          }}
                           className="single-address-container flex-row gap-1"
                         >
                           <input
@@ -146,9 +153,14 @@ const CheckOut = () => {
                           />
                           <div className="flex-grow-1 flex-col">
                             <div className="flex-row align-center-flex justify-space-between-flex">
-                              <strong>{address.name}</strong>
+                              <strong
+                                style={{ color: "var(--navbar-bg-color)" }}
+                              >
+                                {address.name}
+                              </strong>
                               <i
                                 className="fa-solid fa-trash curs-point"
+                                style={{ color: "var(--navbar-bg-color)" }}
                                 onClick={() => {
                                   addressDispatch({
                                     type: ACTIONS.REMOVE_ADDRESS,
@@ -311,12 +323,24 @@ const CheckOut = () => {
                   </div>
                 </div>
               </div>
-              <ButtonPrimary
-                disabled={!addressState.selectedAddressHolder}
-                onClick={() => makePayment(amount)}
+              <button
+                className="btn btn-primary-solid shoetube-btn-main"
+                onClick={() => {
+                  addressState.selectedAddressHolder
+                    ? makePayment(amount)
+                    : toast("No addresses selected , select one or add one.", {
+                        icon: "🤨",
+                        style: {
+                          borderRadius: "0",
+                          boxShadow: "4px 4px var(--navbar-bg-color)",
+                          background: "black",
+                          color: "#fff",
+                        },
+                      });
+                }}
               >
                 Place order
-              </ButtonPrimary>
+              </button>
             </div>
           </div>
         </div>

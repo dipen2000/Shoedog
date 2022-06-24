@@ -25,15 +25,19 @@ const Logout = () => {
   return (
     <ShoedogContainer>
       <div className="flex-col logout-container justify-center-flex align-center-flex">
-        <i class="fa-solid fa-circle-check"></i>
+        <i
+          className="fa-solid fa-circle-check"
+          style={{ color: "var(--navbar-bg-color)" }}
+        ></i>
         <h2>You are successfully logged out</h2>
-        <ButtonPrimary
+        <button
+          className="curs-point btn btn-primary-solid shoetube-btn-main"
           onClick={() => {
             navigate("/");
           }}
         >
           Go back home
-        </ButtonPrimary>
+        </button>
       </div>
     </ShoedogContainer>
   );

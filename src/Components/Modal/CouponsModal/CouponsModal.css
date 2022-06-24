@@ -1,12 +1,12 @@
 .coupons-modal-container{
     border : 3px solid var(--btn-primary-color);
     padding : 0.8rem;
-    background-color : var(--btn-primary-font-color);
+    background-color : var(--primary-background-color);
     width : 40rem;
 }
 
 .coupon-option-container{
-    border : 2px dotted black;
+    border : 2px dotted var(--navbar-bg-color);
     border-radius: 15px;
     padding : 0.8rem;
 }

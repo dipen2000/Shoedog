@@ -4,6 +4,7 @@
     grid-template-rows: 1fr;
     grid-gap: 2rem;
     gap: 2rem;
+    border : 3px solid var(--btn-primary-color);
 }
 
 .product-img-container{
@@ -16,7 +17,7 @@
 }
 
 .quantity-incr-decr-section{
-    border : 3px solid var(--btn-primary-color);
+    border : 3px solid var(--navbar-bg-color);
 }
 
 .incr-decr-span{

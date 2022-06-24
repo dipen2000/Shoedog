@@ -19,7 +19,7 @@ const OrderSummary = () => {
                   return (
                     <div
                       key={item._id}
-                      className="order-detail-card-container card-box-shadow"
+                      className="order-detail-card-container container-box-shadow-purple"
                     >
                       <div className="order-card-img-container">
                         <img className="img-resp" src={item.img} />

@@ -104,13 +104,16 @@ const Login = () => {
                 </PasswordField>
                 <div className="flex-col">
                   <div className="flex-row justify-center-flex">
-                    <ButtonPrimary>Login</ButtonPrimary>
+                    <button className="curs-point btn btn-primary-solid shoetube-btn-main">
+                      Login
+                    </button>
                   </div>
                   <div className="flex-row justify-center-flex">
                     <span>or</span>
                   </div>
                   <div className="flex-row justify-center-flex">
-                    <ButtonPrimary
+                    <button
+                      className="curs-point btn btn-primary-solid shoetube-btn-main"
                       onClick={() => {
                         setInputData((prevData) => ({
                           ...prevData,
@@ -119,12 +122,16 @@ const Login = () => {
                       }}
                     >
                       Guest Login
-                    </ButtonPrimary>
+                    </button>
                   </div>
                 </div>
                 <div className="flex-row gap-1">
                   <span>New to SHOEDOG?</span>
-                  <Link to="/signup" className="curs-point">
+                  <Link
+                    to="/signup"
+                    style={{ color: "var(--navbar-bg-color)" }}
+                    className="curs-point"
+                  >
                     Signup
                   </Link>
                 </div>

@@ -28,14 +28,14 @@ const AddressModal = ({ setAddressModal }) => {
 
   return (
     <div className="flex-col modal-section-overlay justify-center-flex align-center-flex">
-      <div className="flex-col gap-2 bord-3-black address-modal-container">
+      <div className="flex-col gap-2 bord-3-black address-modal-container  container-box-shadow-purple-big">
         <div className="flex-row align-center-flex justify-space-between-flex">
           <h3>Add new Address</h3>
           <div
             className="modal-close-icon-container curs-point"
             onClick={() => setAddressModal(false)}
           >
-            <i className="fa-solid fa-times"></i>
+            <i className="fa-solid fa-times modal-icon-color"></i>
           </div>
         </div>
         <div>

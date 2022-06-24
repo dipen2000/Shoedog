@@ -11,7 +11,7 @@
 
 .checkout-summary-section-heading-container{
     padding : 0.8rem;
-    border-bottom: 2px solid var(--btn-primary-color);
+    border-bottom: 2px solid var(--navbar-bg-color);
 }
 
 .checkout-summary-section{

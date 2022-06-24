@@ -36,7 +36,10 @@ const CartPrice = () => {
           <span>Got a Coupon?</span>
           <i className="fa-solid fa-tags"></i>
         </div>
-        <button className="apply-btn" onClick={() => setShowCouponsModal(true)}>
+        <button
+          className="btn btn-primary-solid shoetube-btn-main"
+          onClick={() => setShowCouponsModal(true)}
+        >
           Apply
         </button>
       </div>
@@ -71,7 +74,7 @@ const CartPrice = () => {
         {couponState.selectedCoupon && (
           <div className="flex-col gap-1">
             <div className="flex-row align-center-flex justify-space-between-flex">
-              <span>
+              <span style={{ color: "var(--navbar-bg-color)" }}>
                 <i
                   className="fa-solid fa-times curs-point"
                   onClick={() => {
@@ -123,9 +126,12 @@ const CartPrice = () => {
         </p>
       </div>
       <div className="flex-row align-center-flex justify-center-flex">
-        <ButtonPrimary onClick={() => navigate("/checkout")}>
+        <button
+          className="btn btn-primary-solid shoetube-btn-main"
+          onClick={() => navigate("/checkout")}
+        >
           Checkout
-        </ButtonPrimary>
+        </button>
       </div>
       {showCouponsModal && (
         <CouponsModal

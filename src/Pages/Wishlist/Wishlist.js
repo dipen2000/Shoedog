@@ -14,9 +14,12 @@ const Wishlist = () => {
         {wishlistState.length === 0 ? (
           <div className="empty-list">
             <h2>Your wishlist is Empty</h2>
-            <ButtonPrimary onClick={() => navigate("/product")}>
+            <button
+              className="btn btn-primary-solid shoetube-btn-main"
+              onClick={() => navigate("/product")}
+            >
               Start Shopping
-            </ButtonPrimary>
+            </button>
           </div>
         ) : (
           <div className="wishlist-section-grid">

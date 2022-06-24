@@ -1,15 +1,18 @@
 .address-modal-container{
     padding : 0.8rem;
-    background-color : var(--btn-primary-font-color);
+    background-color : var(--primary-background-color);
     width : 45rem;
 }
 
 .address-modal-input-container{
     padding : 0.8rem;
+    border : 3px solid var(--navbar-bg-color);
 }
 
 .address-modal-input{
     font-family: var(--component-heading-font);
     outline : none;
     border : 0;
+    background-color : var(--primary-background-color);
+    color : var(--btn-primary-font-color);
 }

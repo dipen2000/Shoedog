@@ -16,9 +16,12 @@ const Cart = () => {
           <div className="empty-list">
             <h2>Your cart is empty</h2>
             <div>
-              <ButtonPrimary onClick={() => navigate("/product")}>
+              <button
+                className="btn btn-primary-solid shoetube-btn-main"
+                onClick={() => navigate("/product")}
+              >
                 Start shopping
-              </ButtonPrimary>
+              </button>
             </div>
           </div>
         ) : (

@@ -1,7 +1,7 @@
 .order-summary-amount-container{
     padding: 0.8rem;
     width : 100%;
-    border-bottom: 2px solid var(--btn-primary-color);
+    border-bottom: 2px solid var(--navbar-bg-color);
 }
 
 .order-summary-container{
@@ -14,6 +14,7 @@
     grid-template-columns: 4fr 6fr;
     grid-template-rows: 1fr;
     gap: 2rem;
+    border : 3px solid var(--btn-primary-color);
 }
 
 .order-card-img-container{

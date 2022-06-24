@@ -19,7 +19,8 @@ const UserDetail = () => {
             <div className="user-detail-section-tabs-grid">
               <div
                 style={{
-                  borderBottom: tab === "Profile" ? "2px solid black" : "",
+                  borderBottom:
+                    tab === "Profile" ? "2px solid var(--navbar-bg-color)" : "",
                 }}
                 onClick={() => setTab("Profile")}
                 className="flex-row justify-center-flex align-center-flex user-detail-tab curs-point"
@@ -28,7 +29,8 @@ const UserDetail = () => {
               </div>
               <div
                 style={{
-                  borderBottom: tab === "Orders" ? "2px solid black" : "",
+                  borderBottom:
+                    tab === "Orders" ? "2px solid var(--navbar-bg-color)" : "",
                 }}
                 onClick={() => setTab("Orders")}
                 className="flex-row justify-center-flex align-center-flex user-detail-tab curs-point"
@@ -40,17 +42,23 @@ const UserDetail = () => {
               {tab === "Profile" && (
                 <div className="user-detail-profile-container flex-col justify-space-between-flex">
                   <div className="flex-row align-center-flex gap-1">
-                    <i className="fa-solid fa-circle-user user-detail-icon"></i>
+                    <i
+                      className="fa-solid fa-circle-user user-detail-icon"
+                      style={{ color: "var(--navbar-bg-color)" }}
+                    ></i>
                     <div className="flex-col">
-                      <strong>
+                      <strong style={{ color: "var(--navbar-bg-color)" }}>
                         {user.firstName} {user.lastName}
                       </strong>
                       <span>{user.email}</span>
                     </div>
                   </div>
-                  <ButtonPrimary onClick={() => navigate("/logout")}>
+                  <button
+                    className="curs-point btn btn-primary-solid shoetube-btn-main"
+                    onClick={() => navigate("/logout")}
+                  >
                     Logout
-                  </ButtonPrimary>
+                  </button>
                 </div>
               )}
               {tab === "Orders" && (
@@ -66,7 +74,7 @@ const UserDetail = () => {
                           return (
                             <div
                               key={item._id}
-                              className="user-order-detail-card-container card-box-shadow"
+                              className="user-order-detail-card-container container-box-shadow-purple"
                             >
                               <div className="user-order-card-img-container">
                                 <img className="img-resp" src={item.img} />

@@ -12,7 +12,7 @@ const CartCard = ({ product }) => {
   } = useCart();
   const { img, brand, name, gender, price, discount, _id, qty } = product;
   return (
-    <div className="cart-card-container card-box-shadow">
+    <div className="cart-card-container container-box-shadow-purple-big">
       <div className="product-img-container">
         <img className="img-resp" src={img} alt={`${brand} ${name}`} />
       </div>

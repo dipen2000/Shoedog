@@ -151,7 +151,9 @@ const Signup = () => {
                 </PasswordField>
                 <div className="flex-row justify-center-flex">
                   <div>
-                    <ButtonPrimary>Signup</ButtonPrimary>
+                    <button className="curs-point btn btn-primary-solid shoetube-btn-main">
+                      Signup
+                    </button>
                   </div>
                 </div>
                 {true &&
@@ -160,7 +162,11 @@ const Signup = () => {
                   ) && <p>The passwords you entered does not match.</p>}
                 <div className="flex-row gap-1">
                   <span>New to SHOEDOG?</span>
-                  <Link className="curs-point" to="/login">
+                  <Link
+                    className="curs-point"
+                    to="/login"
+                    style={{ color: "var(--navbar-bg-color)" }}
+                  >
                     Login
                   </Link>
                 </div>
