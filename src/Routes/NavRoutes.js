@@ -49,14 +49,6 @@ const NavRoutes = () => {
         }
       />
       <Route
-        path="/checkout"
-        element={
-          <RequiresAuth>
-            <CheckOut />
-          </RequiresAuth>
-        }
-      />
-      <Route
         path="/orderSummary"
         element={
           <RequiresAuth>
