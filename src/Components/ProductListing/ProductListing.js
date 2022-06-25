@@ -11,6 +11,7 @@ import { useCart } from "../../context/cartContext";
 import { useWishlist } from "../../context/wishlistContext";
 import { NikeLogo, AdidasLogo, ReebokLogo, PumaLogo } from "../../assets";
 import { getTheCategoryLogo } from "../../Utils";
+import { Loader } from "../Loader/Loader";
 
 const ProductListing = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -71,7 +72,9 @@ const ProductListing = () => {
       <div className="video-section">
         <h3 className="page-heading">Products ({finalData.length})</h3>
         {productState.input.length === 0 ? (
-          <div>Loading...</div>
+          <div className="flex-row align-center-flex justify-center-flex">
+            <Loader />
+          </div>
         ) : finalData.length ? (
           <div className="video-section-grid">
             {finalData.map((product) => {

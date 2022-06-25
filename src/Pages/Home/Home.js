@@ -5,6 +5,7 @@ import { ButtonPrimary } from "../../Components/Buttons";
 import { useNavigate } from "react-router-dom";
 import { useProduct } from "../../context/productContext";
 import { useCategory } from "../../context/categoryContext";
+import { Loader } from "../../Components/Loader/Loader";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -49,7 +50,9 @@ const Home = () => {
                 );
               })
             ) : (
-              <p>Loading...</p>
+              <div className="flex-row align-center-flex justify-center-flex">
+                <Loader />
+              </div>
             )}
           </div>
         </section>
