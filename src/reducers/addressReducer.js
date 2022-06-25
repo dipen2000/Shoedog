@@ -3,6 +3,8 @@ import { v4 as uuid } from "uuid";
 
 const addressReducer = (state, action) => {
   switch (action.type) {
+    case ACTIONS.SET_ADDRESS_ARR:
+      return { ...state, addresses: action.payload.data };
     case ACTIONS.SET_ADDRESS:
       return { ...state, selectedAddressHolder: action.payload.data };
     case ACTIONS.REMOVE_ADDRESS:
@@ -21,6 +23,8 @@ const addressReducer = (state, action) => {
           ...action.payload.data,
         }),
       };
+    case ACTIONS.RESET_ADDRESS_ARR:
+      return { ...state, addresses: [], selectedAddressHolder: "" };
     default:
       return state;
   }

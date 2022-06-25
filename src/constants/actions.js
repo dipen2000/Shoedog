@@ -12,10 +12,12 @@ const ACTIONS = {
   CLEAR_FILTER: "clear filter",
   SET_WISHLIST: "set wishlist",
   SET_CART: "set cart",
+  SET_ADDRESS_ARR: "set address arr",
   SET_ADDRESS: "set address",
   REMOVE_ADDRESS: "remove address",
   ADD_ADDRESS: "add address",
   SET_ORDER: "set order",
+  RESET_ADDRESS_ARR: "reset address arr",
 };
 
 export { ACTIONS };

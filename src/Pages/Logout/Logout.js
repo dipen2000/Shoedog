@@ -5,11 +5,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { ButtonPrimary } from "../../Components/Buttons";
 import { useEffect } from "react";
 import { toast } from "react-hot-toast";
+import { useAddress } from "../../context/addressesContext";
+import { ACTIONS } from "../../constants/actions";
 const Logout = () => {
-  const { setIsAuth, setToken } = useAuth();
+  const { setIsAuth, setToken, setUser } = useAuth();
+  const { addressDispatch } = useAddress();
   setIsAuth(false);
   setToken("");
+  setUser(null);
   localStorage.clear();
+  // addressDispatch({
+  //   type: ACTIONS.RESET_ADDRESS_ARR,
+  // });
   useEffect(() => {
     toast("User logged out.", {
       icon: "✅",

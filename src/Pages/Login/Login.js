@@ -7,12 +7,16 @@ import { loginService } from "../../Services/auth/loginService";
 import { useAuth } from "../../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import { ACTIONS } from "../../constants/actions";
+import { useAddress } from "../../context/addressesContext";
 
 const Login = () => {
   const [inputData, setInputData] = useState({
     input: {},
     hide: { pwd: true },
   });
+
+  const { addressDispatch } = useAddress();
 
   const { setIsAuth, setToken, setUser } = useAuth();
 
@@ -60,6 +64,10 @@ const Login = () => {
           background: "black",
           color: "#fff",
         },
+      });
+      addressDispatch({
+        type: ACTIONS.SET_ADDRESS_ARR,
+        payload: { data: foundUser.addresses },
       });
       navigate("/");
     } catch (e) {

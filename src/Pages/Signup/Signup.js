@@ -6,8 +6,10 @@ import { useAuth } from "../../context/authContext";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import { useAddress } from "../../context/addressesContext";
 import "./Signup.css";
 const Signup = () => {
+  const { addressDispatch } = useAddress();
   const navigate = useNavigate();
   const [inputData, setInputData] = useState({
     input: {},
@@ -68,6 +70,10 @@ const Signup = () => {
           background: "black",
           color: "#fff",
         },
+      });
+      addressDispatch({
+        type: ACTIONS.SET_ADDRESS_ARR,
+        payload: { data: createdUser.addresses },
       });
       navigate("/");
     } catch (e) {
@@ -161,7 +167,7 @@ const Signup = () => {
                     inputData.input.password === inputData.input.confirmPassword
                   ) && <p>The passwords you entered does not match.</p>}
                 <div className="flex-row gap-1">
-                  <span>New to SHOEDOG?</span>
+                  <span>Already have an account?</span>
                   <Link
                     className="curs-point"
                     to="/login"

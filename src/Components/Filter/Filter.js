@@ -9,7 +9,7 @@ import { useProduct } from "../../context/productContext";
 const Filter = () => {
   const sizes = ["8", "9", "10", "11", "12"];
   const { productState, productDispatch } = useProduct();
-  console.log(productState.rangeValue);
+
   return (
     <div className="filter-container">
       <div className="filter-fixed-container">
